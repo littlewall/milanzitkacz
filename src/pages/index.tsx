@@ -1,10 +1,10 @@
 import {HeadFC, Link} from 'gatsby';
 import {FC} from 'react';
-import * as styles from './index.module.css';
-import './layout.module.css';
 import NavBar, {SocialsIcons} from '../components/layout/navbar/navbar';
 import HeadSEO from '../components/layout/headSEO';
 import Footer from '../components/layout/footer/footer';
+import * as styles from './index.module.css';
+import './layout.module.css';
 
 const IndexPage: FC = () => (
     <>
@@ -13,7 +13,7 @@ const IndexPage: FC = () => (
             <div className={styles.background}>
                 <div
                     className={styles.backgroundImage}
-                    style={{backgroundImage: 'url("/images/portrait/web03-2.jpg")'}}
+                    style={{backgroundImage: 'url("/images/portrait/home.jpg")'}}
                 />
             </div>
             <div className={styles.content}>

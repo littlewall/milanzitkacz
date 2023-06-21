@@ -1,5 +1,5 @@
-import { HeadFC } from 'gatsby';
-import { FC } from 'react';
+import {HeadFC} from 'gatsby';
+import {FC} from 'react';
 import * as styles from './index.module.css';
 import '../layout.module.css';
 import NavBar from '../../components/layout/navbar/navbar';
@@ -45,7 +45,7 @@ const ProjectsPage: FC = () => (
                             width="100%"
                             height="100%"
                             clipPath="url(#blob)"
-                            xlinkHref="/images/portrait/web04.jpg"
+                            xlinkHref="/images/portrait/news.jpg"
                             preserveAspectRatio="xMidYMid slice"
                         >
                         </image>
