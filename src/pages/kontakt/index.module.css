@@ -1,0 +1,116 @@
+.page {
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+
+    .background {
+        width: 50vw;
+        max-width: 300px;
+        height: 50vw;
+        max-height: 300px;
+        margin: 10vh auto 0;
+        display: block;
+        position: relative;
+        clip-path: circle(50% at 50% 50%);
+
+        @media (min-width: 900px) {
+            width: 50%;
+            max-width: unset;
+            height: 100vh;
+            max-height: unset;
+            margin: 0;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            clip-path: polygon(25% 0, 100% 0, 100% 100%, 25% 100%, 0 50%);
+        }
+    }
+    
+    .backgroundImage {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-repeat: no-repeat;
+        background-position: 50%;
+        background-size: cover;
+    }
+    
+    .content {
+        max-width: 500px;
+        margin: 0 auto;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+
+        h2 {
+            margin-bottom: 0;
+            font-size: 2em;
+            font-weight: 600;
+        }
+
+        p {
+            font-weight: 300;
+        }
+
+        @media (min-width: 900px) {
+            max-width: 35vw;
+            margin: 0 0 0 5vw;
+            padding: 0 20px 0 0;
+            align-items: flex-start;
+            position: absolute;
+            top: 50%;
+            text-align: left;
+            transform: translateY(-50%);
+        }
+    }
+
+    .email {
+        margin-top: 20px;
+        color: #ffc107;
+        font-size: 1.5em;
+        font-weight: 600;
+        text-decoration: none;
+    }
+
+        
+    .socials {
+        margin-top: 1.5em;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        a {
+            cursor: pointer;
+            color: #555;
+            transition: color .2s linear;
+
+            &:hover,
+            &:focus {
+                color: #ffc107;
+            }
+        }
+
+        svg {
+            width: 1.5em;
+            margin-right: 1em;
+        }
+    }
+    
+    .footer {
+        margin-top: 10vh;
+        display: flex;
+        justify-content: center;
+
+        @media (min-width: 900px) {
+            margin: 0 0 0 5vw;
+            position: absolute;
+            bottom: 10px;
+        }
+    }
+}

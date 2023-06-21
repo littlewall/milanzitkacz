@@ -1,0 +1,40 @@
+{
+  "name": "milanzitkacz",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "develop": "gatsby develop",
+    "start": "gatsby develop",
+    "build": "gatsby build",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "clsx": "^1.2.1",
+    "gatsby": "^5.5.0",
+    "gatsby-plugin-postcss": "^6.5.0",
+    "gatsby-plugin-sitemap": "^6.5.0",
+    "postcss": "^8.4.21",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@babel/plugin-transform-react-jsx": "^7.20.13",
+    "@dvdevcz/eslint-config-react": "^0.0.6",
+    "@dvdevcz/eslint-config-typescript": "^0.0.5",
+    "@dvdevcz/stylelint-config": "^0.0.3",
+    "@dvdevcz/typescript-config": "^0.0.3",
+    "@types/node": "^18.11.18",
+    "@types/react": "^18.0.27",
+    "@types/react-dom": "^18.0.10",
+    "css-mqpacker": "^7.0.0",
+    "cssnano": "^5.1.14",
+    "gatsby-plugin-react-svg": "^3.3.0",
+    "postcss-import": "^15.1.0",
+    "postcss-nested": "^6.0.0",
+    "postcss-preset-env": "^8.0.1",
+    "stylelint": "^14.16.1",
+    "typescript": "^4.9.4"
+  }
+}
