@@ -5,6 +5,7 @@ import {LocalizedString} from '../../Globals';
 
 export interface IPortfolioItem {
     image?: string,
+    component?: JSX.Element,
     subheading?: LocalizedString,
     heading?: LocalizedString,
     text?: LocalizedString,
@@ -34,11 +35,16 @@ const Portfolio: FC<IPortfolio> = ({items}) => (
                         dangerouslySetInnerHTML={{__html: item.embed}}
                     />
                 )}
-                {!item.embed && (
+                {item.image && (
                     <div
                         className={styles.image}
                         style={{backgroundImage: `url('${item.image}')`}}
                     />
+                )}
+                {item.component && (
+                    <div className={styles.component}>
+                        {item.component}
+                    </div>
                 )}
                 {!item.isFullWidth && (
                     <div className={styles.text}>

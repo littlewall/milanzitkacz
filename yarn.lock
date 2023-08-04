@@ -1220,52 +1220,6 @@
   resolved "https://registry.yarnpkg.com/@csstools/selector-specificity/-/selector-specificity-2.1.1.tgz#c9c61d9fe5ca5ac664e1153bb0aa0eba1c6d6308"
   integrity sha512-jwx+WCqszn53YHOfvFMJJRd/B2GqkCBt+1MJSG6o5/s8+ytHMvDZXsJgUEWLk12UnLd7HYKac4BYU5i/Ron1Cw==
 
-"@digitalvisioncz/eslint-config-base@1.0.4", "@digitalvisioncz/eslint-config-base@^1.0.4":
-  version "1.0.4"
-  resolved "https://npm.pkg.github.com/download/@digitalvisioncz/eslint-config-base/1.0.4/e3a06d3a0316461dd59f9e67d0dee5a4b61721bb#e3a06d3a0316461dd59f9e67d0dee5a4b61721bb"
-  integrity sha512-deqowAVMEgzOp3ElqcP0ScgT57key9+v0H4L8lb/ewgJCe/drSglCM11cZ9m0pQM3g4tmK7GIDzj3CoIVrcpHg==
-  dependencies:
-    eslint "^8.10.0"
-    eslint-config-airbnb-base "^15.0.0"
-    eslint-plugin-import "^2.25.4"
-
-"@digitalvisioncz/eslint-config-react@^1.0.7":
-  version "1.0.7"
-  resolved "https://npm.pkg.github.com/download/@digitalvisioncz/eslint-config-react/1.0.7/7b195ac32b46798ae2d79aa76cdeee6056ffc452#7b195ac32b46798ae2d79aa76cdeee6056ffc452"
-  integrity sha512-p6QhO+9rBvOrvgFo2A9CPkoNdnjy1hlcr/lWS5yiXv83LMmOrVinEZQsmznBp/omvYxrvoqqJ0pRwUvQpKB73Q==
-  dependencies:
-    "@digitalvisioncz/eslint-config-base" "^1.0.4"
-    eslint "^8.10.0"
-    eslint-plugin-jsx-a11y "^6.4.1"
-    eslint-plugin-react "^7.29.2"
-    eslint-plugin-react-hooks "^4.3.0"
-
-"@digitalvisioncz/eslint-config-typescript@^1.0.9":
-  version "1.0.9"
-  resolved "https://npm.pkg.github.com/download/@digitalvisioncz/eslint-config-typescript/1.0.9/3b75171e4661c042e7dca556aad066e3b28d4d0c#3b75171e4661c042e7dca556aad066e3b28d4d0c"
-  integrity sha512-SusTnDeuKSokgFc7g6xNGTEEwYLk1gQidwhUgANbDFOrt/p7MGLUptP5OcZ3yDA1D8NIX8SpfAjlGnMwFCDzxA==
-  dependencies:
-    "@digitalvisioncz/eslint-config-base" "1.0.4"
-    "@typescript-eslint/eslint-plugin" "^5.27.1"
-    "@typescript-eslint/parser" "^5.27.1"
-    eslint-config-airbnb-base "^15.0.0"
-
-"@digitalvisioncz/stylelint-config@^1.1.2":
-  version "1.1.2"
-  resolved "https://npm.pkg.github.com/download/@digitalvisioncz/stylelint-config/1.1.2/a0da7c551870602dc9e915d275aa31249337c853#a0da7c551870602dc9e915d275aa31249337c853"
-  integrity sha512-6aWpwItOcu6Mkl3htTfX7hEMDy4/mYkf3GeITAE/wJKADrTn2M0WUtbY7Yz7WeocwiXIBq0uGLKhJsp/OSucIA==
-  dependencies:
-    stylelint "^14.5.3"
-    stylelint-a11y "^1.2.3"
-    stylelint-config-recommended "^7.0.0"
-    stylelint-csstree-validator "^2.0.0"
-    stylelint-order "^5.0.0"
-
-"@digitalvisioncz/typescript-config@^1.0.0":
-  version "1.0.0"
-  resolved "https://npm.pkg.github.com/download/@digitalvisioncz/typescript-config/1.0.0/1c2a31ce2698a3653de2377e0b005dfdf5fff611#1c2a31ce2698a3653de2377e0b005dfdf5fff611"
-  integrity sha512-/8qb3WgQ4Vz6G+mFlyL+dPodG47ga1NKf/06LC3nCcqHof3HDdLQeEI9VqDaISATm+ka+p4Sj5J5nPgUrgF3aw==
-
 "@dvdevcz/eslint-config-base@^0.0.3":
   version "0.0.3"
   resolved "https://registry.yarnpkg.com/@dvdevcz/eslint-config-base/-/eslint-config-base-0.0.3.tgz#9c9f262293025dfb6b536b63d3b1fff91412e195"

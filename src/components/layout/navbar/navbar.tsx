@@ -104,19 +104,19 @@ const NavBar: FC<INavBar> = ({isHome}) => {
                                 <li className={styles.menuItem}>
                                     <Link
                                         className={styles.menuLink}
-                                        to="/co-delm/texty"
+                                        to="/co-delam/texty"
                                     >
                                         Texty
                                     </Link>
                                 </li>
-                                <li className={styles.menuItem}>
+                                {/* <li className={styles.menuItem}>
                                     <Link
                                         className={styles.menuLink}
                                         to="/co-delam/weby"
                                     >
                                         Weby
                                     </Link>
-                                </li>
+                                </li> */}
                             </ul>
                         </li>
                         <li className={styles.menuItem}>

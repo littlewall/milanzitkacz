@@ -1,0 +1,142 @@
+.page {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+
+    .content {
+        width: 100%;
+        margin: 10vh 0 0;
+        padding: 20px;
+        display: flex;
+        flex-flow: column wrap;
+        flex-direction: column;
+        justify-content: center;
+
+        @media (min-width: 900px) {
+            max-width: 1200px;
+            margin: 20vh auto 0;
+            flex-direction: row;
+        }
+    }
+
+    .heading {
+        margin: 0 0 .5rem;
+        font-size: 1.5rem;
+        font-weight: 600;
+        text-align: center;
+
+        @media (min-width: 900px) {
+            font-size: 2rem;
+        }
+    }
+
+    .text {
+        margin: 0 0 1.5rem;
+        font-size: 1rem;
+        font-weight: 300;
+        text-align: center;
+
+        @media (min-width: 900px) {
+            margin: 0 0 3rem;
+        }
+    }
+}
+
+.linkList {
+    width: 75%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+
+    .linkListItem {
+        width: 100%;
+        font-size: 1rem;
+        font-weight: 300;
+        text-align: center;
+
+        &:hover,
+        &:focus {
+
+            button {
+                color: var(--color-yellow);
+            }
+        }
+
+        & + .linkListItem {
+            border-top: 1px solid var(--color-yellow);
+        }
+
+        @media (min-width: 900px) {
+            margin: 0;
+        }
+    }
+
+    button {
+        width: 100%;
+        padding: 1rem 0;
+        display: block;
+        cursor: pointer;
+        background-color: transparent;
+        color: #222;
+        text-decoration: none;
+        transition: color .2s ease-in-out;
+        border: none;
+    }
+}
+
+.modal {
+    width: 100%;
+    height: 100%;
+    padding: 100px 5px;
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, .9);
+}
+  
+
+.modalContent {
+    width: 80%;
+    max-width: 700px;
+    margin: auto;
+    padding: 25px;
+    display: block;
+    background: #f1f1f1;
+}
+  
+.close {
+    position: fixed;
+    top: 35px;
+    right: 35px;
+    cursor: pointer;
+
+    &:hover,
+    &:focus {
+
+        path {
+            fill: var(--color-yellow);
+        }
+    }
+
+    path {
+        fill: #fff;
+        transition: fill .2s ease-in-out;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+
+    .modalContent {
+        width: 100%;
+    }
+}

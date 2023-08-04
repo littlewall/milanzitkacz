@@ -28,11 +28,11 @@ const WorkPage: FC = () => (
                         text="Autorské písně, covery a muzikály"
                         link="/co-delam/texty"
                     />
-                    <CardLink
+                    {/* <CardLink
                         heading="Weby"
                         text="Malé a mikro stránky"
                         link="/co-delam/weby"
-                    />
+                    /> */}
                 </div>
                 <div className={styles.blob}>
                     <svg
