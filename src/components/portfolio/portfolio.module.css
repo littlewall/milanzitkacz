@@ -6,7 +6,7 @@
     .row {
         width: 100%;
         max-width: 450px;
-        margin: 0 auto;
+        margin: 30px 0 0;
         display: flex;
         flex-flow: column wrap;
 
@@ -17,8 +17,13 @@
             }
         }
 
+        &.noTopMargin {
+            margin-top: 0;
+        }
+
         @media (min-width: 900px) {
             max-width: 100%;
+            margin: 0 auto;
             flex-flow: row;
         }
     }
@@ -29,6 +34,14 @@
         .image,
         .text {
             width: 100%;
+        }
+    }
+
+    .verticalReverse {
+        flex-direction: column-reverse;
+
+        @media (min-width: 900px) {
+            flex-direction: row;
         }
     }
 

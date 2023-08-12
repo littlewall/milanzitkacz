@@ -34,9 +34,14 @@
         right: 0;
         bottom: 0;
         left: 0;
+        background-image: url('/images/portrait/home-mobile.jpg');
         background-repeat: no-repeat;
         background-position: 50%;
         background-size: cover;
+
+        @media (min-width: 900px) {
+            background-image: url('/images/portrait/home.jpg');
+        }
     }
     
     .content {

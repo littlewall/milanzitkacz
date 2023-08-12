@@ -67,6 +67,7 @@ const getItems = (onClick: (id: string) => void): IPortfolioItem[] => ([
             cs: 'Má muzikálová prvotina coby autor hudby a textu. Muzikál jsem napsal na motivy povídky F. S. Fitzgeralda "Kostky, boxery a kytara". Jednalo se o malou produkci, která se hrála v Karlovarském městském divadle v letech 2012 a 2013. ',
             en: '',
         },
+        verticalReverse: true,
     },
     {
         component: (
@@ -98,6 +99,7 @@ const getItems = (onClick: (id: string) => void): IPortfolioItem[] => ([
             en: '',
         },
         isRight: true,
+        verticalReverse: true,
     },
     {
         component: (
@@ -133,6 +135,7 @@ const getItems = (onClick: (id: string) => void): IPortfolioItem[] => ([
             cs: 'Překlad dětské verze muzikálu Malá mořská víla. Můj dosud největší projekt v oblasti překladu. Také bylo docela náročné se odprostit od původního překladu a přinést něco nového',
             en: '',
         },
+        verticalReverse: true,
     },
 ]);
 

@@ -10,6 +10,8 @@ const config: GatsbyConfig = {
     plugins: [
         'gatsby-plugin-postcss',
         'gatsby-plugin-sitemap',
+        'gatsby-plugin-image',
+        'gatsby-plugin-sharp',
         {
             resolve: 'gatsby-plugin-react-svg',
             options: {

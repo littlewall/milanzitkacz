@@ -22,10 +22,12 @@ const items: IPortfolioItem[] = [
             cs: 'Sbírka klavírních skladeb, které vznikaly postupně během let 2017-2022. Vychází z mých životních příběhů. Nepovažuji se za pianistu, přesto doufám, že má interpretace není úplně tragická.',
             en: 'A collection of piano compositions that were created gradually during the years 2017-2022. It is based on my life stories. I don\'t consider myself a pianist, yet I hope my interpretation is not completely tragic.',
         },
+        noTopMargin: true,
     },
     {
         embed: '<iframe sandbox="allow-same-origin allow-scripts allow-popups allow-forms" width="100%" height="400" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/14923927&color=%23ffc107&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/milanzitkacz" title="Milan Zítka" target="_blank" style="color: #cccccc; text-decoration: none;">Milan Zítka</a> · <a href="https://soundcloud.com/milanzitkacz/sets/mistr-jazzu" title="Mistr jazzu" target="_blank" style="color: #cccccc; text-decoration: none;">Mistr jazzu</a></div>',
         isFullWidth: true,
+        noTopMargin: true,
     },
     {
         image: '/images/muzikaly/mistr-jazzu.jpg',
@@ -46,6 +48,7 @@ const items: IPortfolioItem[] = [
     {
         embed: '<iframe sandbox="allow-same-origin allow-scripts allow-popups allow-forms" width="100%" height="400" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/14923927&color=%23ffc107&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/milanzitkacz" title="Milan Zítka" target="_blank" style="color: #cccccc; text-decoration: none;">Milan Zítka</a> · <a href="https://soundcloud.com/milanzitkacz/sets/mistr-jazzu" title="Mistr jazzu" target="_blank" style="color: #cccccc; text-decoration: none;">Mistr jazzu</a></div>',
         isFullWidth: true,
+        noTopMargin: true,
     },
     {
         embed: '<iframe sandbox="allow-same-origin allow-scripts allow-popups allow-forms" width="100%" height="100%" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/16495495&color=%23ffc107&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/milanzitkacz" title="Milan Zítka" target="_blank" style="color: #cccccc; text-decoration: none;">Milan Zítka</a> · <a href="https://soundcloud.com/milanzitkacz/sets/smolicek-divadelni-vanocni-pohadka" title="Smolíček - divadelní vánoční pohádka" target="_blank" style="color: #cccccc; text-decoration: none;">Smolíček - divadelní vánoční pohádka</a></div>',
@@ -61,6 +64,7 @@ const items: IPortfolioItem[] = [
             cs: 'Tato hudba vznikla pro vánoční verzi představení pro děti s názvem Smolíček. Kromě nadšených dětí byl nadšený i recenzent/redaktor z portálu i-divadlo.cz.',
             en: 'This music was created for the Christmas version of the play for children called Smolíček. In addition to the enthusiastic children, the reviewer / editor from the i-divadlo.cz portal was also enthusiastic.',
         },
+        verticalReverse: true,
     },
 ];
 

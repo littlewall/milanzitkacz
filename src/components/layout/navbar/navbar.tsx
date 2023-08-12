@@ -17,6 +17,7 @@ export const SocialsIcons: FC = () => (
             href="https://www.instagram.com/milanzitkacz"
             target="_blank"
             rel="noreferrer"
+            title="Instagram"
         >
             <InstagramIcon />
         </a>
@@ -24,6 +25,7 @@ export const SocialsIcons: FC = () => (
             href="https://www.soundcloud.com/milanzitkacz"
             target="_blank"
             rel="noreferrer"
+            title="Soundcloud"
         >
             <SoundcloudIcon />
         </a>
@@ -31,6 +33,7 @@ export const SocialsIcons: FC = () => (
             href="https://www.youtube.com/@milanzitkacz"
             target="_blank"
             rel="noreferrer"
+            title="Youtube"
         >
             <YoutubeIcon />
         </a>
@@ -38,6 +41,7 @@ export const SocialsIcons: FC = () => (
             href="https://www.github.com/littlewall"
             target="_blank"
             rel="noreferrer"
+            title="Github"
         >
             <GithubIcon />
         </a>

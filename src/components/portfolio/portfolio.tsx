@@ -12,6 +12,8 @@ export interface IPortfolioItem {
     isRight?: boolean,
     embed?: string,
     isFullWidth?: boolean,
+    verticalReverse?: boolean,
+    noTopMargin?: boolean,
 }
 
 interface IPortfolio {
@@ -26,6 +28,8 @@ const Portfolio: FC<IPortfolio> = ({items}) => (
                     styles.row,
                     item.isRight && styles.right,
                     item.isFullWidth && styles.fullWidth,
+                    item.verticalReverse && styles.verticalReverse,
+                    item.noTopMargin && styles.noTopMargin,
                 )}
                 key={`portfolioItem${index}`}
             >
