@@ -13,7 +13,7 @@ const IndexPage: FC = () => (
             <div className={styles.background}>
                 <div
                     className={styles.backgroundImage}
-                    style={{backgroundImage: 'url("/images/portrait/home.jpg")'}}
+                    style={{backgroundImage: 'url("/images/portrait/home.png")'}}
                 />
             </div>
             <div className={styles.content}>

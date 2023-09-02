@@ -55,7 +55,7 @@ const WorkPage: FC = () => (
                             width="100%"
                             height="100%"
                             clipPath="url(#blob)"
-                            xlinkHref="/images/portrait/whatido.jpg"
+                            xlinkHref="/images/portrait/whatido.png"
                             preserveAspectRatio="xMidYMid slice"
                         >
                         </image>

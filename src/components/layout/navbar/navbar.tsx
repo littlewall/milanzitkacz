@@ -123,7 +123,7 @@ const NavBar: FC<INavBar> = ({isHome}) => {
                                 </li> */}
                             </ul>
                         </li>
-                        <li className={styles.menuItem}>
+                        {/* <li className={styles.menuItem}>
                             <Link
                                 activeClassName={styles.linkActive}
                                 to="/aktualne"
@@ -149,7 +149,7 @@ const NavBar: FC<INavBar> = ({isHome}) => {
                                     </Link>
                                 </li>
                             </ul>
-                        </li>
+                        </li> */}
                         <li className={styles.menuItem}>
                             <Link
                                 className={styles.menuLink}

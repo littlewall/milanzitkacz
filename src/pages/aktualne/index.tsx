@@ -45,7 +45,7 @@ const ProjectsPage: FC = () => (
                             width="100%"
                             height="100%"
                             clipPath="url(#blob)"
-                            xlinkHref="/images/portrait/news.jpg"
+                            xlinkHref="/images/portrait/news.png"
                             preserveAspectRatio="xMidYMid slice"
                         >
                         </image>

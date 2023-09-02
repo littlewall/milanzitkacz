@@ -1666,6 +1666,11 @@
   resolved "https://registry.yarnpkg.com/@lmdb/lmdb-win32-x64/-/lmdb-win32-x64-2.5.3.tgz#c72e8b6faae31d925d23a6db0379cc3fe0216fdd"
   integrity sha512-cK+Elf3RjEzrm3SerAhrFWL5oQAsZSJ/LmjL1joIpTfEP1etJJ9CTRvdaV6XLYAxaEkfdhk/9hOvHLbR9yIhCA==
 
+"@lwdev/audio-player@^0.0.8":
+  version "0.0.8"
+  resolved "https://registry.yarnpkg.com/@lwdev/audio-player/-/audio-player-0.0.8.tgz#3e1ca767fee6dcdf9d4d5d53956bd6fd43e1e654"
+  integrity sha512-U0hB3bloU7+Qzqh+HIzadbinG3FyMMjLT0/OuaOewRIG30eOKoL8C4XGjseYC+vYGB0ynwN8rwGzsExtVAG2Bw==
+
 "@mischnic/json-sourcemap@^0.1.0":
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/@mischnic/json-sourcemap/-/json-sourcemap-0.1.0.tgz#38af657be4108140a548638267d02a2ea3336507"

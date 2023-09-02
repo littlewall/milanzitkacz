@@ -13,7 +13,7 @@ const ContactPage: FC = () => (
             <div className={styles.background}>
                 <div
                     className={styles.backgroundImage}
-                    style={{backgroundImage: 'url("/images/portrait/contact.jpg")'}}
+                    style={{backgroundImage: 'url("/images/portrait/contact.png")'}}
                 />
             </div>
             <div className={styles.content}>

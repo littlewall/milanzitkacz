@@ -5,30 +5,45 @@ import NavBar from '../../components/layout/navbar/navbar';
 import Footer from '../../components/layout/footer/footer';
 import Portfolio, {IPortfolioItem} from '../../components/portfolio/portfolio';
 import HeadSEO from '../../components/layout/headSEO';
+import '@lwdev/audio-player';
 
 const items: IPortfolioItem[] = [
-
-    {
-        image: '/images/hudba/yellow-world.jpg',
-        subheading: {
-            cs: 'EP',
-            en: 'EP',
-        },
-        heading: {
-            cs: 'Yellow World',
-            en: 'Yellow World',
-        },
-        text: {
-            cs: 'Sbírka klavírních skladeb, které vznikaly postupně během let 2017-2022. Vychází z mých životních příběhů. Nepovažuji se za pianistu, přesto doufám, že má interpretace není úplně tragická.',
-            en: 'A collection of piano compositions that were created gradually during the years 2017-2022. It is based on my life stories. I don\'t consider myself a pianist, yet I hope my interpretation is not completely tragic.',
-        },
-        noTopMargin: true,
-    },
-    {
-        embed: '<iframe sandbox="allow-same-origin allow-scripts allow-popups allow-forms" width="100%" height="400" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/14923927&color=%23ffc107&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/milanzitkacz" title="Milan Zítka" target="_blank" style="color: #cccccc; text-decoration: none;">Milan Zítka</a> · <a href="https://soundcloud.com/milanzitkacz/sets/mistr-jazzu" title="Mistr jazzu" target="_blank" style="color: #cccccc; text-decoration: none;">Mistr jazzu</a></div>',
-        isFullWidth: true,
-        noTopMargin: true,
-    },
+    // {
+    //     image: '/images/hudba/yellow-world.webp',
+    //     subheading: {
+    //         cs: 'EP',
+    //         en: 'EP',
+    //     },
+    //     heading: {
+    //         cs: 'Yellow World',
+    //         en: 'Yellow World',
+    //     },
+    //     text: {
+    //         cs: 'Sbírka klavírních skladeb, které vznikaly postupně během let 2017-2022. Vychází z mých životních příběhů. Nepovažuji se za pianistu, přesto doufám, že má interpretace není úplně tragická.',
+    //         en: 'A collection of piano compositions that were created gradually during the years 2017-2022. It is based on my life stories. I don\'t consider myself a pianist, yet I hope my interpretation is not completely tragic.',
+    //     },
+    //     noTopMargin: true,
+    // },
+    // {
+    //     embed: `
+    //         <lw-audio-player
+    //             artist="Milan Zítka"
+    //             cover="/images/yellow-world.jpg"
+    //             playlist="Yellow World (EP, 2023)"
+    //         >
+    //             <lw-audio-player-song
+    //                 url="/audio/milan-zitka_yellow_world.mp3"
+    //                 title="Yellow World"
+    //             ></lw-audio-player-song>
+    //             <lw-audio-player-song
+    //                 url="/audio/milan-zitka_yellow_world.mp3"
+    //                 title="Dancin' my dream"
+    //             ></lw-audio-player-song>
+    //         </lw-audio-player>
+    //     `,
+    //     isFullWidth: true,
+    //     noTopMargin: true,
+    // },
     {
         image: '/images/muzikaly/mistr-jazzu.jpg',
         subheading: {
@@ -46,12 +61,58 @@ const items: IPortfolioItem[] = [
         isRight: true,
     },
     {
-        embed: '<iframe sandbox="allow-same-origin allow-scripts allow-popups allow-forms" width="100%" height="400" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/14923927&color=%23ffc107&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/milanzitkacz" title="Milan Zítka" target="_blank" style="color: #cccccc; text-decoration: none;">Milan Zítka</a> · <a href="https://soundcloud.com/milanzitkacz/sets/mistr-jazzu" title="Mistr jazzu" target="_blank" style="color: #cccccc; text-decoration: none;">Mistr jazzu</a></div>',
+        embed: `
+            <lw-audio-player
+                artist="Mistr Jazzu"
+                cover="/images/hudba/mistr-jazzu/playlist-cover.jpg"
+                playlist="Mistr Jazzu - pracovní nahrávky" 
+            >
+                <lw-audio-player-song
+                    url="/audio/mistr-jazzu/uvodni.mp3"
+                    title="Úvodní"
+                ></lw-audio-player-song>
+                <lw-audio-player-song 
+                    url="/audio/mistr-jazzu/amanthis-song.mp3"
+                    title="Myšlenky Jima"
+                ></lw-audio-player-song>
+                <lw-audio-player-song 
+                    url="/audio/mistr-jazzu/charleston.mp3"
+                    title="Charleston"
+                ></lw-audio-player-song>
+                <lw-audio-player-song 
+                    url="/audio/mistr-jazzu/myslenky-jima.mp3"
+                    title="Myšlenky Jima"
+                ></lw-audio-player-song>
+                <lw-audio-player-song
+                    url="/audio/mistr-jazzu/vecirek.mp3"
+                    title="Večírek"
+                ></lw-audio-player-song>
+            </lw-audio-player>
+        `,
         isFullWidth: true,
         noTopMargin: true,
     },
     {
-        embed: '<iframe sandbox="allow-same-origin allow-scripts allow-popups allow-forms" width="100%" height="100%" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/16495495&color=%23ffc107&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/milanzitkacz" title="Milan Zítka" target="_blank" style="color: #cccccc; text-decoration: none;">Milan Zítka</a> · <a href="https://soundcloud.com/milanzitkacz/sets/smolicek-divadelni-vanocni-pohadka" title="Smolíček - divadelní vánoční pohádka" target="_blank" style="color: #cccccc; text-decoration: none;">Smolíček - divadelní vánoční pohádka</a></div>',
+        embed: `
+            <lw-audio-player
+                artist="Milan Zítka"
+                cover="/images/hudba/playlist-cover-default.jpg"
+                playlist="Smolíček (hudba k představení)"
+            >
+                <lw-audio-player-song
+                    url="/audio/smolicek/vanocni-smes.mp3"
+                    title="Vánoční směs"
+                ></lw-audio-player-song>
+                <lw-audio-player-song 
+                    url="/audio/smolicek/den-preslavny.mp3"
+                    title="Den přeslavný"
+                ></lw-audio-player-song>
+                <lw-audio-player-song 
+                    url="/audio/smolicek/otcovo-tema.mp3"
+                    title="Otcovo téma"
+                ></lw-audio-player-song>
+            </lw-audio-player>
+        `,
         subheading: {
             cs: 'hudba k představení',
             en: 'music for the play',
@@ -93,5 +154,6 @@ export default HudbaPage;
 export const Head: HeadFC = () => (
     <HeadSEO>
         <title>O mých skladatelských pokusech | Milan Zítka</title>
+        {/* <script src="https://cdn.jsdelivr.net/npm/@lwdev/audio-player@latest" type="module"></script> */}
     </HeadSEO>
 );

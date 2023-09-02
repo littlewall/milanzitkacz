@@ -31,7 +31,7 @@ const AboutMePage: FC = () => (
                         width="100%"
                         height="100%"
                         clipPath="url(#blob)"
-                        xlinkHref="/images/portrait/whoami.jpg"
+                        xlinkHref="/images/portrait/whoami.png"
                         preserveAspectRatio="xMidYMid slice"
                     >
                     </image>
