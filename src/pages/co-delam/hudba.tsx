@@ -5,7 +5,6 @@ import NavBar from '../../components/layout/navbar/navbar';
 import Footer from '../../components/layout/footer/footer';
 import Portfolio, {IPortfolioItem} from '../../components/portfolio/portfolio';
 import HeadSEO from '../../components/layout/headSEO';
-import '@lwdev/audio-player';
 
 const items: IPortfolioItem[] = [
     // {
@@ -154,6 +153,6 @@ export default HudbaPage;
 export const Head: HeadFC = () => (
     <HeadSEO>
         <title>O mých skladatelských pokusech | Milan Zítka</title>
-        {/* <script src="https://cdn.jsdelivr.net/npm/@lwdev/audio-player@latest" type="module"></script> */}
+        <script src="https://cdn.jsdelivr.net/npm/@lwdev/audio-player@latest" type="module"></script>
     </HeadSEO>
 );
