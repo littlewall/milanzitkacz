@@ -99,5 +99,6 @@ export default AboutMePage;
 export const Head: HeadFC = () => (
     <HeadSEO>
         <title>Kdo jsem a jaký je můj příběh | Milan Zítka</title>
+        <meta name="description" content="Můj příběh je cestou plnou jazzu, muzikálů a kreativního designu. Od prvních kroků v jazzových uskupeních, přes úspěchy na divadelních prknech, až po vášeň pro web design."/>
     </HeadSEO>
 );

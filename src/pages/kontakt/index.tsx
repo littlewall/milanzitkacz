@@ -5,6 +5,7 @@ import HeadSEO from '../../components/layout/headSEO';
 import Footer from '../../components/layout/footer/footer';
 import * as styles from './index.module.css';
 import '../layout.module.css';
+import content from '../../Globals';
 
 const ContactPage: FC = () => (
     <>
@@ -42,5 +43,6 @@ export default ContactPage;
 export const Head: HeadFC = () => (
     <HeadSEO>
         <title>Vytvořme příběh společně | Milan Zítka</title>
+        <meta name="description" content="Jsem vždy otevřený novým příběhům a projektům. Pokud máte nápad, kterým bych mohl přispět, nebo se chcete jen zeptat či pozdravit, neváhejte mi poslat e-mail nebo mě sledovat na sociálních médiích. Těším se na vaše příběhy a myšlenky!" />
     </HeadSEO>
 );

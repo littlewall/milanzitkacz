@@ -153,6 +153,7 @@ export default HudbaPage;
 export const Head: HeadFC = () => (
     <HeadSEO>
         <title>O mých skladatelských pokusech | Milan Zítka</title>
+        <meta name="description" content="Můj hudební repertoár zahrnuje písně plné emocí, instrumentální skladby a díla vytvořená pro radost i pro hluboké zamyšlení. Hudba je můj prostředek vyjádření, ať už v radosti nebo ve smutku."/>
         <script src="https://cdn.jsdelivr.net/npm/@lwdev/audio-player@latest" type="module"></script>
     </HeadSEO>
 );

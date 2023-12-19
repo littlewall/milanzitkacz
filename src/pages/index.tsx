@@ -44,5 +44,6 @@ export default IndexPage;
 export const Head: HeadFC = () => (
     <HeadSEO>
         <title>Milan Zítka - skladatel, zpěvák a web developer</title>
+        <meta name="description" content="Jsem Milan Zítka, snílek a vypravěč, který se věnuje tvorbě v hudbě a web designu. Ve svém uměleckém světě vám představím, jak se příběhy mohou rozvíjet skrze mé melodie a designy. Poznejte můj přístup, kde každá nota a pixel vypráví jedinečný příběh."/>
     </HeadSEO>
 );
