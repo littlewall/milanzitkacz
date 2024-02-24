@@ -72,5 +72,7 @@ export default WorkPage;
 export const Head: HeadFC = () => (
     <HeadSEO>
         <title>Co dělám a co jsem zažil | Milan Zítka</title>
+        <meta name="description" content="Můj umělecký svět je plný hudby, muzikálů, textů a webů. Přečtěte si, co jsem zažil a co všechno tvořím. Těším se, že vám své příběhy představím!" />
+        <link rel="canonical" href="https://milanzitka.cz/co-delam"/>
     </HeadSEO>
 );

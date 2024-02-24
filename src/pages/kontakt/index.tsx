@@ -44,5 +44,6 @@ export const Head: HeadFC = () => (
     <HeadSEO>
         <title>Vytvořme příběh společně | Milan Zítka</title>
         <meta name="description" content="Jsem vždy otevřený novým příběhům a projektům. Pokud máte nápad, kterým bych mohl přispět, nebo se chcete jen zeptat či pozdravit, neváhejte mi poslat e-mail nebo mě sledovat na sociálních médiích. Těším se na vaše příběhy a myšlenky!" />
+        <link rel="canonical" href="https://milanzitka.cz/kontakt"/>
     </HeadSEO>
 );

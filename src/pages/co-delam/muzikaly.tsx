@@ -144,5 +144,6 @@ export const Head: HeadFC = () => (
     <HeadSEO>
         <title>O mém putování muzikály | Milan Zítka</title>
         <meta name="description" content="Objevte můj svět muzikálů, od prvního okouzlení v Praze až po inspirativní cesty na londýnský West End. Jako muzikálový autor i herec jsem prošel cestu plnou setkání se skvělými talentovanými lidmi. Muzikál je pro mě nejen umění, ale i cesta objevování."/>
+        <link rel="canonical" href="https://milanzitka.cz/co-delam/muzikaly"/>
     </HeadSEO>
 );

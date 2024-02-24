@@ -1,6 +1,5 @@
 import {
     FC,
-    useEffect,
     useRef,
     useState,
 } from 'react';
@@ -205,5 +204,6 @@ export const Head: HeadFC = () => (
     <HeadSEO>
         <title>O mém básnickém střevu | Milan Zítka</title>
         <meta name="description" content="Písňové texty jsou pro mě součástí hudebního vyjádření - od vlastních písní až po práci na muzikálech. Můj repertoár zahrnuje jak originální texty, tak překlady, každý s jeho vlastním příběhem a emocí." />
+        <link rel="canonical" href="https://milanzitka.cz/co-delam/texty"/>
     </HeadSEO>
 );

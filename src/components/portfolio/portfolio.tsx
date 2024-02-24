@@ -50,7 +50,7 @@ const Portfolio: FC<IPortfolio> = ({items}) => (
                         {item.component}
                     </div>
                 )}
-                {!item.isFullWidth && (
+                {!item.isFullWidth && item.heading && (
                     <div className={styles.text}>
                         <h4 className={styles.subheading}>
                             {item.subheading?.cs}
