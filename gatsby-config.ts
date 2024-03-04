@@ -6,7 +6,7 @@ const config: GatsbyConfig = {
         siteUrl: 'https://milanzitka.cz',
     },
     graphqlTypegen: true,
-    trailingSlash: 'ignore',
+    trailingSlash: 'never',
     plugins: [
         'gatsby-plugin-postcss',
         'gatsby-plugin-sitemap',
