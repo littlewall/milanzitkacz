@@ -5,6 +5,8 @@ import InstagramIcon from '../../../assets/images/socials/instagram.svg';
 import SoundcloudIcon from '../../../assets/images/socials/soundcloud.svg';
 import YoutubeIcon from '../../../assets/images/socials/youtube.svg';
 import GithubIcon from '../../../assets/images/socials/github.svg';
+import LanguageSwitcher from '../languageSwitcher/languageSwitcher';
+import {useTranslation} from '../../../lib/translation/useTranslation';
 import * as styles from './navbar.module.css';
 
 interface INavBar {
@@ -51,6 +53,7 @@ export const SocialsIcons: FC = () => (
 
 const NavBar: FC<INavBar> = ({isHome}) => {
     const [opened, setIsOpened] = useState(false);
+    const translate = useTranslation();
 
     return (
         <nav className={clsx(styles.navbar, isHome && styles.homeVariant)}>
@@ -77,7 +80,7 @@ const NavBar: FC<INavBar> = ({isHome}) => {
                                 activeClassName={styles.linkActive}
                                 to="/kdo-jsem"
                             >
-                                Kdo jsem
+                                {translate('common.navbar.whoAmI')}
                             </Link>
                         </li>
                         <li className={styles.menuItem}>
@@ -86,7 +89,7 @@ const NavBar: FC<INavBar> = ({isHome}) => {
                                 to="/co-delam"
                                 className={styles.menuLink}
                             >
-                                Co dělám
+                                {translate('common.navbar.whatIDo')}
                             </Link>
                             <ul className={styles.menuDropdown}>
                                 <li className={styles.menuItem}>
@@ -94,7 +97,7 @@ const NavBar: FC<INavBar> = ({isHome}) => {
                                         className={styles.menuLink}
                                         to="/co-delam/muzikaly"
                                     >
-                                        Muzikály
+                                        {translate('common.navbar.musicals')}
                                     </Link>
                                 </li>
                                 <li className={styles.menuItem}>
@@ -102,7 +105,7 @@ const NavBar: FC<INavBar> = ({isHome}) => {
                                         className={styles.menuLink}
                                         to="/co-delam/hudba"
                                     >
-                                        Hudba
+                                        {translate('common.navbar.music')}
                                     </Link>
                                 </li>
                                 <li className={styles.menuItem}>
@@ -110,7 +113,7 @@ const NavBar: FC<INavBar> = ({isHome}) => {
                                         className={styles.menuLink}
                                         to="/co-delam/texty"
                                     >
-                                        Texty
+                                        {translate('common.navbar.lyrics')}
                                     </Link>
                                 </li>
                                 {/* <li className={styles.menuItem}>
@@ -123,41 +126,19 @@ const NavBar: FC<INavBar> = ({isHome}) => {
                                 </li> */}
                             </ul>
                         </li>
-                        {/* <li className={styles.menuItem}>
-                            <Link
-                                activeClassName={styles.linkActive}
-                                to="/aktualne"
-                                className={styles.menuLink}
-                            >
-                                Aktuální projekty
-                            </Link>
-                            <ul className={styles.menuDropdown}>
-                                <li className={styles.menuItem}>
-                                    <Link
-                                        className={styles.menuLink}
-                                        to="/aktualne/yellow-world-ep"
-                                    >
-                                        Yellow world (EP)
-                                    </Link>
-                                </li>
-                                <li className={styles.menuItem}>
-                                    <Link
-                                        className={styles.menuLink}
-                                        to="/aktualne/co-kdyz-muzikal"
-                                    >
-                                        Co když? (muzikál)
-                                    </Link>
-                                </li>
-                            </ul>
-                        </li> */}
                         <li className={styles.menuItem}>
                             <Link
                                 className={styles.menuLink}
                                 activeClassName={styles.linkActive}
                                 to="/kontakt"
                             >
-                                Kontakt
+                                {translate('common.navbar.contact')}
                             </Link>
+                        </li>
+                        <li className={styles.menuItem}>
+                            <div className={styles.languageContainer}>
+                                <LanguageSwitcher className={styles.menuLanguageSwitcher} />
+                            </div>
                         </li>
                     </ul>
                     {!isHome && (

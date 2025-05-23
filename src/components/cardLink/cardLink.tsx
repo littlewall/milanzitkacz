@@ -6,6 +6,7 @@ interface ICardLink {
     heading: string,
     text: string,
     link: string,
+    lang?: string,
 }
 
 const CardLink: FC<ICardLink> = ({heading, text, link}) => (

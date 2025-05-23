@@ -114,6 +114,18 @@
         }
     }
 
+    .languageContainer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .menuLanguageSwitcher {
+        margin: 0;
+        display: flex;
+        align-items: center;
+    }
+
     .menuInitials {
         color: var(--color-yellow);
         font-size: 2em;
@@ -228,6 +240,12 @@
 
         svg {
             width: 1.5em;
+        }
+
+        .languageSwitcher {
+            margin-left: 1.5em;
+            color: #555;
+            border-color: #555;
         }
 
         @media (min-width: 900px) {

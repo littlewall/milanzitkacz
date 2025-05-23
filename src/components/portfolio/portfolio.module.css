@@ -117,9 +117,29 @@
 
     .paragraph {
         margin: 0;
+        margin-bottom: 1.5rem;
         color: #1a1a1a;
         font-size: 1rem;
         line-height: 1.5;
         font-weight: 300;
+    }
+
+    .button {
+        margin-top: 10px;
+        padding: 10px 20px;
+        display: inline-block;
+        background-color: var(--color-yellow, #f9bf31);
+        color: #1a1a1a;
+        font-size: .9rem;
+        font-weight: 500;
+        text-decoration: none;
+        transition: all .2s ease-in-out;
+        border-radius: 4px;
+        
+        &:hover,
+        &:focus {
+            background-color: #e0aa1f;
+            transform: translateY(-2px);
+        }
     }
 }

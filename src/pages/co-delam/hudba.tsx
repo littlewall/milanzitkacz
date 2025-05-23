@@ -5,6 +5,7 @@ import NavBar from '../../components/layout/navbar/navbar';
 import Footer from '../../components/layout/footer/footer';
 import Portfolio, {IPortfolioItem} from '../../components/portfolio/portfolio';
 import HeadSEO from '../../components/layout/headSEO';
+import {useTranslation} from '../../lib/translation/useTranslation';
 
 const items: IPortfolioItem[] = [
     // {
@@ -128,33 +129,39 @@ const items: IPortfolioItem[] = [
     },
 ];
 
-const HudbaPage: FC = () => (
-    <>
-        <NavBar/>
-        <div className={styles.page}>
-            <div className={styles.content}>
-                <h1 className={styles.heading}>
-                    Hudba
-                </h1>
-                <p className={styles.text}>
-                    Hudbě se věnuji od dětství. Začalo to hrou na piáno, pokračovalo přes populární zpěv a skončilo skladbou.
-                    I když si občas rád zazpívám, nejvíce mě baví skládat. Většinou písně, ale i instrumentální skladby.
-                    Většinou pro sebe, ale i pro jiné. Většinou pro zábavu, ale i pro zamyšlení. Většinou z radosti, ale i ze smutku.
-                </p>
-                <Portfolio items={items}/>
+const HudbaPage: FC = () => {
+    const translate = useTranslation('music.content');
+
+    return (
+        <>
+            <NavBar/>
+            <div className={styles.page}>
+                <div className={styles.content}>
+                    <h1 className={styles.heading}>
+                        {translate('heading')}
+                    </h1>
+                    <p className={styles.text}>
+                        {translate('description')}
+                    </p>
+                    <Portfolio items={items}/>
+                </div>
             </div>
-        </div>
-        <Footer/>
-    </>
-);
+            <Footer/>
+        </>
+    );
+};
 
 export default HudbaPage;
 
-export const Head: HeadFC = () => (
-    <HeadSEO>
-        <title>O mých skladatelských pokusech | Milan Zítka</title>
-        <meta name="description" content="Můj hudební repertoár zahrnuje písně plné emocí, instrumentální skladby a díla vytvořená pro radost i pro hluboké zamyšlení. Hudba je můj prostředek vyjádření, ať už v radosti nebo ve smutku."/>
-        <script src="https://cdn.jsdelivr.net/npm/@lwdev/audio-player@latest" type="module"></script>
-        <link rel="canonical" href="https://milanzitka.cz/co-delam/hudba"/>
-    </HeadSEO>
-);
+export const Head: HeadFC = () => {
+    const translate = useTranslation('music.meta');
+
+    return (
+        <HeadSEO>
+            <title>{translate('title')}</title>
+            <meta name="description" content={translate('description')} />
+            <script src="https://cdn.jsdelivr.net/npm/@lwdev/audio-player@latest" type="module"></script>
+            <link rel="canonical" href="https://milanzitka.cz/co-delam/hudba"/>
+        </HeadSEO>
+    );
+};

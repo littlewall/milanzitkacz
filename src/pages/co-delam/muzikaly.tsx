@@ -5,6 +5,7 @@ import NavBar from '../../components/layout/navbar/navbar';
 import Footer from '../../components/layout/footer/footer';
 import Portfolio, {IPortfolioItem} from '../../components/portfolio/portfolio';
 import HeadSEO from '../../components/layout/headSEO';
+import {useTranslation} from '../../lib/translation/useTranslation';
 
 const items: IPortfolioItem[] = [
     {
@@ -35,6 +36,14 @@ const items: IPortfolioItem[] = [
         text: {
             cs: 'Má muzikálová prvotina coby autor hudby a textu. Hráli jsme v Karlovarském městském divadle. Příběh na motivy povídky F. S. Fitzgeralda jsem zpracoval do jednoaktové hry, kterou nastudovali žáci a učitelé ZUŠ Karlovy Vary - Rybáře.',
             en: 'My first musical as a music and lyrics author. We played in Karlovy Vary City Theatre. I adapted the story based on F. S. Fitzgerald\'s short story into a one-act play, which was staged by students and teachers of the Karlovy Vary Conservatory - Rybáře.',
+        },
+        button: {
+            text: {
+                cs: 'Poslechnout ukázky',
+                en: 'Listen to samples',
+            },
+            url: '/co-delam/hudba#mistr-jazzu',
+            isExternal: false,
         },
         isRight: true,
     },
@@ -111,39 +120,52 @@ const items: IPortfolioItem[] = [
             en: 'What if...?',
         },
         text: {
-            cs: 'Muzikál, který teprve vzniká. Jedná se o původní příběh, což je pro mě velká výzva, protože jsem zvyklý pracovat spíše s předlohou. V současné době je hotová kostra příběhu a několik písní. Více informací brzy.',
-            en: 'A musical that is only just being created. It is an original story, which is a big challenge for me, because I am used to work with a template. At present, the skeleton of the story and several songs are ready. More information soon.',
+            cs: 'Muzikál ve vývoji. Hotová je první verze scénáře, hudby i textů. V současné době se chystá nahrávání konceptového EP. Jedna z písniček měla svou světovou premiéru v londýnském The Other Palace. Více informací najdete na stránkách muzikálu.',
+            en: 'A musical in development. The first version of the script, music and lyrics is finished. Currently, a concept EP is being prepared. One of the songs had its world premiere at The Other Palace in London. More information can be found on the musical\'s website.',
+        },
+        button: {
+            text: {
+                cs: 'Navštívit stránky muzikálu',
+                en: 'Visit the musical\'s website',
+            },
+            url: 'https://cokdyzmuzikal.cz',
+            isExternal: true,
         },
     },
 ];
 
-const MuzikalyPage: FC = () => (
-    <>
-        <NavBar/>
-        <div className={styles.page}>
-            <div className={styles.content}>
-                <h1 className={styles.heading}>
-                    Muzikály
-                </h1>
-                <p className={styles.text}>
-                    Už od prvního muzikálu, který jsem viděl v Praze, jsem věděl,
-                    že tohle je to, co chci dělat. Jako autor jsem rád, že jsem si muzikál
-                    zkusil &quot;z druhé strany&quot;. Inspiraci pravidelně jezdím chytat na londýnský West End. Na cestě jsem se potkal s mnoha skvělými lidmi.
-                    Někteří z nich jsou dnes hvězdy, jiní jsou už jen vzpomínkou. Ale všichni jsou pro mě inspirací.
-                </p>
-                <Portfolio items={items}/>
+const MuzikalyPage: FC = () => {
+    const translate = useTranslation('musicals.content');
+
+    return (
+        <>
+            <NavBar/>
+            <div className={styles.page}>
+                <div className={styles.content}>
+                    <h1 className={styles.heading}>
+                        {translate('heading')}
+                    </h1>
+                    <p className={styles.text}>
+                        {translate('description')}
+                    </p>
+                    <Portfolio items={items}/>
+                </div>
             </div>
-        </div>
-        <Footer/>
-    </>
-);
+            <Footer/>
+        </>
+    );
+};
 
 export default MuzikalyPage;
 
-export const Head: HeadFC = () => (
-    <HeadSEO>
-        <title>O mém putování muzikály | Milan Zítka</title>
-        <meta name="description" content="Objevte můj svět muzikálů, od prvního okouzlení v Praze až po inspirativní cesty na londýnský West End. Jako muzikálový autor i herec jsem prošel cestu plnou setkání se skvělými talentovanými lidmi. Muzikál je pro mě nejen umění, ale i cesta objevování."/>
-        <link rel="canonical" href="https://milanzitka.cz/co-delam/muzikaly"/>
-    </HeadSEO>
-);
+export const Head: HeadFC = () => {
+    const translate = useTranslation('musicals.meta');
+
+    return (
+        <HeadSEO>
+            <title>{translate('title')}</title>
+            <meta name="description" content={translate('description')} />
+            <link rel="canonical" href="https://milanzitka.cz/co-delam/muzikaly"/>
+        </HeadSEO>
+    );
+};

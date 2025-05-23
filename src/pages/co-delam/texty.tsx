@@ -10,6 +10,7 @@ import Footer from '../../components/layout/footer/footer';
 import Portfolio, {IPortfolioItem} from '../../components/portfolio/portfolio';
 import HeadSEO from '../../components/layout/headSEO';
 import texts from '../../data/texts/texts';
+import {useTranslation} from '../../lib/translation/useTranslation';
 
 const getLinkList = (links: {
     id: string,
@@ -153,18 +154,18 @@ const TextyPage: FC = () => {
         }
     };
 
+    const translate = useTranslation('texts.content');
+
     return (
         <>
             <NavBar/>
             <div className={styles.page}>
                 <div className={styles.content}>
                     <h1 className={styles.heading}>
-                        Texty
+                        {translate('heading')}
                     </h1>
                     <p className={styles.text}>
-                        Písňové texty jsem začal psát asi ve stejné době jako hudbu. Většinou jsem je psal
-                        pro své písně, ale někdy jsem se pustil i do překladů. Velkou část mé textové tvorby
-                        patří muzikálům - ať už původním, nebo překladům.
+                        {translate('description')}
                     </p>
                     <Portfolio items={getItems(onClick)}/>
                 </div>
@@ -200,10 +201,14 @@ const TextyPage: FC = () => {
 
 export default TextyPage;
 
-export const Head: HeadFC = () => (
-    <HeadSEO>
-        <title>O mém básnickém střevu | Milan Zítka</title>
-        <meta name="description" content="Písňové texty jsou pro mě součástí hudebního vyjádření - od vlastních písní až po práci na muzikálech. Můj repertoár zahrnuje jak originální texty, tak překlady, každý s jeho vlastním příběhem a emocí." />
-        <link rel="canonical" href="https://milanzitka.cz/co-delam/texty"/>
-    </HeadSEO>
-);
+export const Head: HeadFC = () => {
+    const translate = useTranslation('texts.meta');
+
+    return (
+        <HeadSEO>
+            <title>{translate('title')}</title>
+            <meta name="description" content={translate('description')} />
+            <link rel="canonical" href="https://milanzitka.cz/co-delam/texty"/>
+        </HeadSEO>
+    );
+};
