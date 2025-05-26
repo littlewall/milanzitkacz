@@ -64,14 +64,19 @@ const NavBar: FC<INavBar> = ({isHome}) => {
                 >
                     MZ
                 </Link>
-                <button
-                    className={clsx(styles.hamburgerButton, opened && styles.active)}
-                    onClick={() => setIsOpened(!opened)}
-                >
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
+                <div className={styles.hamburgerWrapper}>
+                    <div className={styles.mobileLanguageSwitcher}>
+                        <LanguageSwitcher />
+                    </div>
+                    <button
+                        className={clsx(styles.hamburgerButton, opened && styles.active)}
+                        onClick={() => setIsOpened(!opened)}
+                    >
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
                 <div className={clsx(styles.menuWrapper, opened && styles.mobileOpened)}>
                     <ul className={clsx(styles.menuList)}>
                         <li className={styles.menuItem}>
@@ -136,7 +141,7 @@ const NavBar: FC<INavBar> = ({isHome}) => {
                             </Link>
                         </li>
                         <li className={styles.menuItem}>
-                            <div className={styles.languageContainer}>
+                            <div className={clsx(styles.languageContainer, styles.desktopLanguageSwitcher)}>
                                 <LanguageSwitcher className={styles.menuLanguageSwitcher} />
                             </div>
                         </li>
