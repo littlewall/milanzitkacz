@@ -20,7 +20,7 @@ const items: IPortfolioItem[] = [
         },
         text: {
             cs: 'Má první velká divadelní zkušenost a hned to nejlepší dílo. Největší malá role byla zloděj Montparnasse, ale celkem jsem měl asi deset převleků - od galejníka, přes chudáka a studenta až po svatebčana.',
-            en: '',
+            en: 'My first big theatre experience and immediately the best musical. The biggest small role was the thief Montparnasse, but I had about ten costumes in total - from a galley slave, through a pauper and a student to a wedding guest.',
         },
     },
     {
@@ -90,7 +90,7 @@ const items: IPortfolioItem[] = [
         },
         text: {
             cs: 'Třetí světové dílo v mém životě. Poprvé jsem si v plném rozsahu vyzkoušel pozici swinga, začinal jsem s pěti rolemi, nakonec jsem si kromě Passarina vyzkoušel všechny mužské role v rámci company. Fantoma jsem si v GoJa Music Hall zahrál celkem 243x.',
-            en: '',
+            en: 'The third world-class musical in my life. For the first time, I fully experienced the position of a swing, starting with five roles, and in the end I tried all men\'s roles within the company except Passarino. I played the Phantom a total of 243 times at GoJa Music Hall.',
         },
     },
     {
@@ -105,7 +105,7 @@ const items: IPortfolioItem[] = [
         },
         text: {
             cs: 'Poslední muzikál coby herec. Možná zatím? Určitě nejnáročnější dílo, plné choreografií a náročných pěveckých partů. Opět jsem se vrhl do role swinga a postupně si vyzkoušel doslova všechny mužské role v rámci company.',
-            en: '',
+            en: 'The last musical as an actor. Maybe for now? Definitely the most demanding work, full of choreography and challenging singing parts. Again, I took on the role of a swing and gradually tried literally all men\'s roles within the company.',
         },
         isRight: true,
     },
