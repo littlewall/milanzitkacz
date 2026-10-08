@@ -51,7 +51,7 @@ for (const locale of ['cs', 'en']) {
         assert.ok(!(/class="undefined"|className="undefined"/).test(html), `Missing styles: ${file}`);
         assert.ok((/rel="canonical" href="https:\/\/milanzitka.cz\//).test(html), `Canonical: ${file}`);
         assert.ok((/hreflang="en"/).test(html), `English alternate: ${file}`);
-        assert.ok(!(/>\s*(?:texts|home|common|whatido)\.content\./).test(html), `Missing translation: ${file}`);
+        assert.ok(!(/>\s*(?:texts|home|common|whatido|music|musicals|aboutme|contact|current)\.content\./).test(html), `Missing translation: ${file}`);
         for (const match of html.matchAll(/(?:href|src|url|cover)="(\/[^"?#]*)(?:[?#][^"]*)?"/g)) {
             const target = decodeURIComponent(match[1]);
 
@@ -71,7 +71,7 @@ for (const locale of ['cs', 'en']) {
 
         if (!route) {
             assert.match(html, /title="Instagram"/, `Missing homepage socials: ${file}`);
-            assert.ok(html.includes('Yellow world (EP)'), `Missing homepage projects: ${file}`);
+            assert.ok(!html.includes('current-heading'), `Unexpected homepage projects: ${file}`);
         }
 
         pages++;

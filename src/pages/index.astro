@@ -2,11 +2,9 @@
 import {Picture} from 'astro:assets';
 
 import homePortrait from '../../public/images/portrait/home.jpg';
-import CardLink from '../components/cardLink/cardLink.astro';
 import Footer from '../components/layout/footer/footer.astro';
 import NavBar from '../components/layout/navbar/navbar.astro';
 import SocialsIcons from '../components/layout/navbar/socialsIcons.astro';
-import currentProjects from '../data/currentProjects';
 import Layout from '../layouts/Layout.astro';
 import {SupportedLanguage} from '../lib/translation/i18nTypes';
 import {createTranslator} from '../lib/translation/translations';
@@ -46,31 +44,15 @@ const currentPath = Astro.url.pathname;
                 <br class={styles.desktopBreak} />
                 {translate('home.content.description')}
             </span>
-            <a class={styles.button} href={lang === 'en' ? '/en/kdo-jsem' : '/kdo-jsem'}>
-                {translate('home.content.cta')}
-            </a>
-            <div class={styles.socials}><SocialsIcons /></div>
+            <div class={styles.actions}>
+                <a class={styles.button} href={lang === 'en' ? '/en/kdo-jsem' : '/kdo-jsem'}>
+                    {translate('home.content.cta')}
+                </a>
+                <div class={styles.socials}><SocialsIcons /></div>
+            </div>
+        </div>
+        <div class={styles.footer}>
+            <Footer inline />
         </div>
     </div>
-
-    <section class={styles.current} aria-labelledby="current-heading">
-        <div class={styles.currentHead}>
-            <h2 id="current-heading">{translate('home.content.current.heading')}</h2>
-            <a href={lang === 'en' ? '/en/aktualne' : '/aktualne'}>
-                {translate('home.content.current.more')} →
-            </a>
-        </div>
-        <div class={styles.cards}>
-            {currentProjects.map(project => (
-                <CardLink
-                    heading={translate(`current.content.cards.${project.key}.heading`)}
-                    text={translate(`current.content.cards.${project.key}.text`)}
-                    link={project.link}
-                    lang={lang}
-                    headingLevel="h3"
-                />
-            ))}
-        </div>
-    </section>
-    <Footer />
 </Layout>

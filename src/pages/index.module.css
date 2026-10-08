@@ -26,7 +26,7 @@
             clip-path: ellipse(70% 80% at 70% 50%);
         }
     }
-    
+
     .backgroundImage {
         position: absolute;
         inset: 0;
@@ -35,7 +35,7 @@
         object-fit: cover;
         object-position: 50% 50%;
     }
-    
+
     .content {
         display: flex;
         flex-direction: column;
@@ -56,7 +56,7 @@
             text-align: left;
         }
     }
-    
+
     .name {
         position: relative;
         overflow: hidden;
@@ -67,7 +67,7 @@
         color: #333;
         text-transform: uppercase;
         word-spacing: .25em;
-    
+
         h3 {
             margin: 0;
         }
@@ -76,7 +76,7 @@
             font-size: 4em;
         }
     }
-    
+
     .job {
         position: relative;
         overflow: hidden;
@@ -89,15 +89,29 @@
             font-size: 1.125em;
         }
     }
-    
+
+    .actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+        align-items: center;
+        justify-content: center;
+        margin-top: 2.5em;
+
+        @media (min-width: 900px) {
+            justify-content: flex-start;
+        }
+    }
+
     .socials {
         display: flex;
         flex-direction: row;
+        gap: .75em;
         align-items: center;
-        margin-top: 1.5em;
 
         a {
             cursor: pointer;
+            display: inline-flex;
             color: #555;
             transition: color .2s linear;
 
@@ -109,14 +123,12 @@
 
         svg {
             width: 1.5em;
-            margin-right: .75em;
         }
     }
 
     .button {
         display: inline-block;
         width: auto;
-        margin-top: 2.5em;
         padding: .5em 1em;
         border: none;
         border-radius: 8px;
@@ -138,9 +150,22 @@
         }
     }
 
+    .footer {
+        display: flex;
+        justify-content: center;
+        padding: 0 20px;
+
+        @media (min-width: 900px) {
+            position: absolute;
+            bottom: 10px;
+            left: 5vw;
+            padding: 0;
+        }
+    }
+
     .desktopBreak {
         display: none;
-    
+
         @media (min-width: 900px) {
             display: block;
         }
@@ -148,59 +173,5 @@
 
     @media (min-width: 900px) {
         min-height: 100vh;
-    }
-}
-
-.current {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 40px 20px 60px;
-
-    .currentHead {
-        display: flex;
-        flex-wrap: wrap;
-        gap: .5em 2em;
-        align-items: baseline;
-        justify-content: space-between;
-
-        h2 {
-            margin: 0;
-            font-size: 1.75em;
-            font-weight: 600;
-            color: #333;
-        }
-
-        a {
-            font-weight: 500;
-            color: #555;
-            text-decoration: none;
-            transition: color .2s linear;
-
-            &:hover,
-            &:focus {
-                color: var(--color-yellow);
-            }
-        }
-    }
-
-    .cards {
-        display: flex;
-        flex-direction: column;
-        margin-top: 1rem;
-
-        @media (min-width: 900px) {
-            flex-flow: row wrap;
-            margin-right: -1rem;
-            margin-left: -1rem;
-
-            > * {
-                flex: 1 1 300px;
-            }
-        }
-    }
-
-    @media (min-width: 900px) {
-        margin: 0 0 0 5vw;
-        padding: 60px 5vw 80px 0;
     }
 }
