@@ -1,0 +1,94 @@
+---
+import type {SupportedLanguage} from '../../../lib/translation/i18nTypes';
+import {createTranslator} from '../../../lib/translation/translations';
+import LanguageSwitcher from '../languageSwitcher/languageSwitcher.astro';
+import styles from './navbar.module.css';
+import SocialsIcons from './socialsIcons.astro';
+interface Props {
+    isHome?: boolean,
+    lang?: SupportedLanguage,
+    currentPath?: string,
+}
+
+const {
+    isHome,
+    lang = 'cs',
+    currentPath = '',
+} = Astro.props;
+const translate = createTranslator(lang);
+const p = (path: string) => (lang === 'en' ? `/en${path}` : path);
+const isActive = (path: string) => currentPath.replace(/\/$/, '') === p(path).replace(/\/$/, '');
+---
+<nav class:list={[styles.navbar, isHome && styles.homeVariant]} data-navbar>
+    <div class={styles.menu}>
+        <a class={styles.menuInitials} href={p('/')}>MZ</a>
+        <div class={styles.hamburgerWrapper}>
+            <div class={styles.mobileLanguageSwitcher}>
+                <LanguageSwitcher lang={lang} currentPath={currentPath} />
+            </div>
+            <button
+                type="button"
+                class={styles.hamburgerButton}
+                aria-label="Menu"
+                aria-expanded="false"
+                aria-controls="main-menu"
+                data-menu-toggle
+                data-active-class={styles.active}
+            >
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+        <div id="main-menu" class={styles.menuWrapper} data-menu data-open-class={styles.mobileOpened}>
+            <ul class={styles.menuList}>
+                <li class={styles.menuItem}>
+                    <a class:list={[styles.menuLink, isActive('/kdo-jsem') && styles.linkActive]} href={p('/kdo-jsem')}>
+                        {translate('common.navbar.whoAmI')}
+                    </a>
+                </li>
+                <li class={styles.menuItem}>
+                    <a class:list={[styles.menuLink, currentPath.includes('co-delam') && styles.linkActive]} href={p('/co-delam')}>
+                        {translate('common.navbar.whatIDo')}
+                    </a>
+                    <ul class={styles.menuDropdown}>
+                        <li class={styles.menuItem}><a class={styles.menuLink} href={p('/co-delam/muzikaly')}>{translate('common.navbar.musicals')}</a></li>
+                        <li class={styles.menuItem}><a class={styles.menuLink} href={p('/co-delam/hudba')}>{translate('common.navbar.music')}</a></li>
+                        <li class={styles.menuItem}><a class={styles.menuLink} href={p('/co-delam/texty')}>{translate('common.navbar.lyrics')}</a></li>
+                    </ul>
+                </li>
+                <li class={styles.menuItem}>
+                    <a class:list={[styles.menuLink, isActive('/kontakt') && styles.linkActive]} href={p('/kontakt')}>
+                        {translate('common.navbar.contact')}
+                    </a>
+                </li>
+                <li class={styles.menuItem}>
+                    <div class:list={[styles.languageContainer, styles.desktopLanguageSwitcher]}>
+                        <LanguageSwitcher className={styles.menuLanguageSwitcher} lang={lang} currentPath={currentPath} />
+                    </div>
+                </li>
+            </ul>
+            {!isHome && <div class={styles.socials}><SocialsIcons /></div>}
+        </div>
+    </div>
+</nav>
+<script>
+    for (const nav of document.querySelectorAll<HTMLElement>('[data-navbar]')) {
+        const button = nav.querySelector<HTMLButtonElement>('[data-menu-toggle]');
+        const menu = nav.querySelector<HTMLElement>('[data-menu]');
+
+        if (!button || !menu) continue;
+
+        const toggle = (opened: boolean) => {
+            button.setAttribute('aria-expanded', String(opened));
+            button.classList.toggle(button.dataset.activeClass ?? '', opened);
+            menu.classList.toggle(menu.dataset.openClass ?? '', opened);
+        };
+
+        button.addEventListener('click', () => toggle(button.getAttribute('aria-expanded') !== 'true'));
+        nav.addEventListener('keydown', event => {
+            if (event.key === 'Escape' && button.getAttribute('aria-expanded') === 'true') {
+                toggle(false);
+                button.focus();
+            }
+        });
+    }
+</script>

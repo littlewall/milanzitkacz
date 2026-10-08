@@ -1,0 +1,30 @@
+---
+import CsFlag from '../../../assets/images/flags/cs.svg';
+import EnFlag from '../../../assets/images/flags/en.svg';
+import type {SupportedLanguage} from '../../../lib/translation/i18nTypes';
+import styles from './languageSwitcher.module.css';
+interface Props {
+    className?: string,
+    lang?: SupportedLanguage,
+    currentPath?: string,
+}
+
+const {
+    className,
+    lang = 'cs',
+    currentPath = '/',
+} = Astro.props;
+const href = lang === 'cs'
+    ? `/en${currentPath === '/' ? '/' : currentPath}`
+    : currentPath.replace(/^\/en(?=\/|$)/, '') || '/';
+const Flag = lang === 'cs' ? EnFlag : CsFlag;
+---
+<a
+    href={href}
+    class:list={[styles.languageSwitcher, className]}
+    aria-label={lang === 'cs' ? 'Switch to English' : 'Přepnout do češtiny'}
+    lang={lang === 'cs' ? 'en' : 'cs'}
+    hreflang={lang === 'cs' ? 'en' : 'cs'}
+>
+    <Flag class={styles.flag} aria-hidden="true" />
+</a>

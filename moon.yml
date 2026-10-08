@@ -1,0 +1,106 @@
+$schema: 'https://moonrepo.dev/schemas/project.json'
+language: typescript
+
+fileGroups:
+  code:
+    - 'src/**/*'
+    - 'scripts/**/*'
+    - '*.mjs'
+    - '*.ts'
+    - 'package.json'
+    - 'tsconfig.json'
+    - 'pnpm-lock.yaml'
+
+tasks:
+  install:
+    command: 'pnpm install --frozen-lockfile'
+    inputs: ['@group(code)']
+    toolchain: 'node'
+    options:
+      cache: false
+
+  dev:
+    command: 'pnpm exec astro dev'
+    inputs: ['@group(code)']
+    preset: 'server'
+    toolchain: 'node'
+
+  build:
+    command: 'pnpm exec astro build'
+    inputs: ['@group(code)', 'public/**/*']
+    outputs: ['dist']
+    toolchain: 'node'
+    options:
+      cache: false
+
+  preview:
+    command: 'pnpm exec astro preview'
+    inputs: ['@group(code)']
+    preset: 'server'
+    toolchain: 'node'
+
+  typecheck:
+    command: 'pnpm exec astro check'
+    inputs: ['@group(code)']
+    toolchain: 'node'
+    options:
+      cache: false
+      mergeArgs: 'replace'
+
+  test:
+    command: 'node scripts/check-site.mjs'
+    inputs: ['@group(code)']
+    deps: ['build']
+    toolchain: 'node'
+    options:
+      cache: false
+
+  lint:
+    command: 'pnpm exec oxlint --type-aware'
+    inputs: ['@group(code)']
+    toolchain: 'node'
+    options:
+      cache: false
+
+  fmt-js:
+    command: 'pnpm exec eslint . --fix'
+    inputs: ['@group(code)']
+    toolchain: 'node'
+    options:
+      cache: false
+
+  fmt-css:
+    command: 'pnpm exec stylelint "src/**/*.css" --fix'
+    inputs: ['@group(code)']
+    toolchain: 'node'
+    options:
+      cache: false
+
+  fmt:
+    command: 'noop'
+    inputs: []
+    deps: ['fmt-js', 'fmt-css']
+
+  fmt-check-js:
+    command: 'pnpm exec eslint . --max-warnings 0'
+    inputs: ['@group(code)']
+    toolchain: 'node'
+    options:
+      cache: false
+
+  fmt-check-css:
+    command: 'pnpm exec stylelint "src/**/*.css" --max-warnings 0'
+    inputs: ['@group(code)']
+    toolchain: 'node'
+    options:
+      cache: false
+
+  fmt-check:
+    command: 'noop'
+    inputs: ['@group(code)']
+    deps: ['fmt-check-js', 'fmt-check-css']
+
+  verify:
+    command: 'noop'
+    inputs: ['@group(code)']
+    deps: ['typecheck', 'lint', 'fmt-check', 'test']

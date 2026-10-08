@@ -14,7 +14,7 @@ const aboutme: PageTranslations = {
     content: {
         paragraph1: {
             cs: 'Můj příběh je plný šťastných náhod a skvělých lidí, bez kterých bych dnes nebyl tam, kde jsem. Jindřich Volf ml. mě zasvětil do tajů jazzu a improvizace, díky němu jsem si již za mlada zahrál a zazpíval v několika jazzových uskupeních, a především mě vedl a podporoval v mých skladatelských pokusech. Štěpánka Steinová mi zase otevřela dveře do populárního zpěvu a dovolila mi otrkat se ve vystupování na koncertech.',
-            en: "My story is full of happy coincidences and great people, without whom I wouldn't be where I am today. Jindřich Volf Jr. introduced me to the secrets of jazz and improvisation, thanks to him I played and sang in several jazz ensembles at a young age, and above all, he guided and supported me in my compositional attempts. Štěpánka Steinová opened the doors to popular singing for me and allowed me to get used to performing at concerts.",
+            en: 'My story is full of happy coincidences and great people, without whom I wouldn\'t be where I am today. Jindřich Volf Jr. introduced me to the secrets of jazz and improvisation, thanks to him I played and sang in several jazz ensembles at a young age, and above all, he guided and supported me in my compositional attempts. Štěpánka Steinová opened the doors to popular singing for me and allowed me to get used to performing at concerts.',
         },
         paragraph2: {
             cs: 'V těchto letech jsem se učil naslouchat ostatní muzikanty, být součástí celku. Odbourával jsem trému, učil se improvizovat v nečekaných situacích, držet se rytmu, a především užívat si tu radost z hudby. Také jsem začínal sbírat první zkušenosti na prknech, co znamenají svět. Ať už s Karlovarským hudebním divadlem, nebo s Divadlem KaPSa.',
@@ -22,11 +22,11 @@ const aboutme: PageTranslations = {
         },
         paragraph3: {
             cs: 'Cestu po uměleckých školách zakončil můj autorský muzikál Mistr jazzu, jednoaktové dílo uváděné v Karlovarském městském divadle, které pro mě znamenalo jistý odrazový můstek. Díky němu jsem složil přijímačky na konzervatoř, obor Skladba. A tam jsem potkal další důležitou osobu v podobě Milana Svobody.',
-            en: "I concluded my journey through art schools with my original musical 'Master of Jazz', a one-act play presented at the Karlovy Vary City Theatre, which served as a certain springboard for me. Thanks to it, I passed the entrance exams to the conservatory, majoring in Composition. And there I met another important person in the form of Milan Svoboda.",
+            en: 'I concluded my journey through art schools with my original musical \'Master of Jazz\', a one-act play presented at the Karlovy Vary City Theatre, which served as a certain springboard for me. Thanks to it, I passed the entrance exams to the conservatory, majoring in Composition. And there I met another important person in the form of Milan Svoboda.',
         },
         paragraph4: {
             cs: 'Díky němu jsem se nachomýtl k muzikálu Les Misérables - Bídníci, který se stal mým muzikálovým debutem. Také jsem zde poznal dva důležité lidi - mého budoucího švagra (tehdy budoucího, aktuálně současného) a také dobrého kamaráda a umělce, se kterým jsme rozepsali další muzikálové dílo. Po Bídnících následovala další světová díla jako Fantom Opery nebo RENT.',
-            en: "Thanks to him, I got involved in the musical 'Les Misérables', which became my musical debut. I also met two important people here - my future brother-in-law (then future, currently present) and also a good friend and artist with whom we co-wrote another musical work. After 'Les Misérables', I worked on other world-renowned works such as 'The Phantom of the Opera' or 'RENT'.",
+            en: 'Thanks to him, I got involved in the musical \'Les Misérables\', which became my musical debut. I also met two important people here - my future brother-in-law (then future, currently present) and also a good friend and artist with whom we co-wrote another musical work. After \'Les Misérables\', I worked on other world-renowned works such as \'The Phantom of the Opera\' or \'RENT\'.',
         },
         paragraph5: {
             cs: 'Po sedmi letech plných muzikálů jsem potřeboval změnit směr. Vrátil jsem se ke starému koníčku - tvorbě webových stránek. Nastoupil jsem do Digital Vision, které se stalo mým druhým domovem, a kde můžu svůj koníček pilovat, zdokonalovat a vyprávět tak příběhy zase trochu jinak, online.',

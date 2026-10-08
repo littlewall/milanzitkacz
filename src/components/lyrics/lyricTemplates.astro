@@ -1,0 +1,26 @@
+---
+import coVicTiMuzuDat from '../../data/texts/covers/co-vic-ti-muzu-dat.astro';
+import jsiTedTamKdeTouzisByt from '../../data/texts/covers/jsi-ted-tam-kde-touzis-byt.astro';
+import kissTheGirl from '../../data/texts/mala-morska-vila/kiss-the-girl.astro';
+import partOfYourWorld from '../../data/texts/mala-morska-vila/part-of-your-world.astro';
+import underTheSea from '../../data/texts/mala-morska-vila/under-the-sea.astro';
+import amanthisSong from '../../data/texts/mistr-jazzu/amanthis-song.astro';
+import myslenkyJima from '../../data/texts/mistr-jazzu/myslenky-jima.astro';
+import uvodni from '../../data/texts/mistr-jazzu/uvodni.astro';
+
+const texts = {
+    'mistr-jazzu-myslenky-jima': myslenkyJima,
+    'mistr-jazzu-uvodni': uvodni,
+    'mistr-jazzu-amanthis-song': amanthisSong,
+
+    'covers-jsi-ted-tam-kde-touzis-byt': jsiTedTamKdeTouzisByt,
+    'covers-co-vic-ti-muzu-dat': coVicTiMuzuDat,
+
+    'mala-morska-vila-under-the-sea': underTheSea,
+    'mala-morska-vila-kiss-the-girl': kissTheGirl,
+    'mala-morska-vila-part-of-your-world': partOfYourWorld,
+};
+---
+{Object.entries(texts).map(([id, Text]) => (
+    <template data-lyrics-text={id}><Text /></template>
+))}

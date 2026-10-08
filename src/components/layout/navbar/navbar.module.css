@@ -1,35 +1,35 @@
 .navbar {
-    width: 100%;
-    display: flex;
     position: fixed;
     z-index: 5;
-    background: #fff;
+    display: flex;
+    width: 100%;
     border-bottom: 1px solid #ededed;
+    background: #fff;
 
     .menu {
-        width: 100%;
-        margin: 10px 5vw 0;
         display: flex;
         flex-direction: row;
-        justify-content: space-between;
         align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        margin: 10px 5vw 0;
         list-style: none;
 
         @media (min-width: 900px) {
-            margin: 20px 0 0 5vw;
             justify-content: unset;
+            margin: 20px 0 0 5vw;
         }
     }
 
     .menuWrapper {
-        width: 100%;
+        position: absolute;
+        top: 60px;
+        left: 0;
         display: flex;
         display: none;
         flex-direction: column;
         align-items: center;
-        position: absolute;
-        top: 60px;
-        left: 0;
+        width: 100%;
         background: #fff;
 
         &.mobileOpened {
@@ -38,14 +38,14 @@
         }
 
         @media (min-width: 900px) {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
             position: relative;
             top: 0;
             left: 30px;
-            background: transparent;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
             border-bottom-color: transparent;
+            background: transparent;
         }
     }
 
@@ -55,21 +55,21 @@
         list-style: none;
 
         @media (min-width: 900px) {
-            width: unset;
             display: flex;
             flex-direction: row;
+            width: unset;
         }
     }
 
     .menuItem {
+        position: relative;
         width: 100%;
         margin-right: 40px;
         padding: 10px 0;
-        position: relative;
         border-bottom: 1px solid #ededed;
 
         &:hover,
-        &:focus {
+        &:focus-within {
 
             > .menuLink {
                 color: var(--color-yellow);
@@ -77,8 +77,8 @@
 
             .menuDropdown {
                 top: calc(100% - 10px);
-                opacity: 1;
                 visibility: visible;
+                opacity: 1;
             }
         }
 
@@ -91,12 +91,12 @@
     }
 
     .menuLink {
+        display: inline-block;
         width: 100%;
         padding: 0;
-        display: inline-block;
-        color: #555;
         font-size: 1em;
         font-weight: 500;
+        color: #555;
         text-align: center;
         text-decoration: none;
         text-transform: uppercase;
@@ -104,48 +104,48 @@
         
         @media (min-width: 900px) {
             width: unset;
-            text-align: left;
             border-bottom: 2px solid transparent;
+            text-align: left;
         }
     }
 
     .languageContainer {
         display: flex;
-        justify-content: center;
         align-items: center;
+        justify-content: center;
     }
 
     .menuLanguageSwitcher {
-        margin: 0;
         display: flex;
         align-items: center;
+        margin: 0;
     }
 
     .menuInitials {
-        color: var(--color-yellow);
+        border-bottom: 2px solid transparent;
         font-size: 2em;
         font-weight: 600;
+        color: var(--color-yellow);
         text-decoration: none;
-        border-bottom: 2px solid transparent;
     }
 
     .menuDropdown {
-        min-width: 200px;
-        padding: 0;
-        display: none;
         position: absolute;
+        z-index: 1;
         top: 120%;
         left: 0;
-        z-index: 1;
-        opacity: 0;
-        visibility: hidden;
-        background: #fff;
+        display: none;
+        min-width: 200px;
+        padding: 0;
+        border: none;
+        border-radius: 0;
         text-align: left;
         list-style: none;
-        transition: all .2s ease-in;
+        visibility: hidden;
+        opacity: 0;
+        background: #fff;
         box-shadow: 0 10px 30px 0 rgb(0 0 0 / 10%);
-        border-radius: 0;
-        border: none;
+        transition: all .2s ease-in;
 
         .menuItem {
             margin-right: 0;
@@ -156,9 +156,9 @@
         }
 
         .menuLink {
+            display: block;
             margin-right: 0;
             padding: 0 20px;
-            display: block;
             color: #05364d;
             text-transform: none;
         }
@@ -173,12 +173,12 @@
     }
 
     .hamburgerWrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
         width: 40px;
         height: 40px;
         margin-right: 5vw;
-        display: flex;
-        justify-content: center;
-        align-items: center;
 
         @media (min-width: 900px) {
             display: none;
@@ -186,17 +186,17 @@
     }
 
     .hamburgerButton {
-        display: inline-block;
         cursor: pointer;
+        display: inline-block;
+        border: none;
         background: transparent;
         outline: none;
-        border: none;
 
         span {
+            display: block;
             width: 35px;
             height: 4px;
             margin: 5px 0;
-            display: block;
             background-color: #555;
             transition: all .2s ease;
         }
@@ -218,12 +218,13 @@
     }
 
     .socials {
-        padding-bottom: 10px;
         display: flex;
         align-items: center;
+        padding-bottom: 10px;
 
         a {
             --margin: 1em;
+
             cursor: pointer;
             color: #555;
             transition: color .2s linear;
@@ -248,8 +249,8 @@
 
         .languageSwitcher {
             margin-left: 1.5em;
-            color: #555;
             border-color: #555;
+            color: #555;
         }
 
         @media (min-width: 900px) {
@@ -259,9 +260,9 @@
     }
 
     .mobileLanguageSwitcher {
-        margin-right: 1rem;
         display: flex;
         align-items: center;
+        margin-right: 1rem;
     }
 
     .desktopLanguageSwitcher {
@@ -271,8 +272,10 @@
     @media (min-width: 900px) {
 
         &.homeVariant {
-            background: transparent;
+            position: absolute;
+            overflow-x: clip;
             border-bottom-color: transparent;
+            background: transparent;
         }
     }
 

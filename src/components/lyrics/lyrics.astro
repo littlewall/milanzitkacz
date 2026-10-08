@@ -1,0 +1,52 @@
+---
+import items from '../../data/lyrics';
+import type {SupportedLanguage} from '../../lib/translation/i18nTypes';
+import styles from '../../pages/co-delam/texty.module.css';
+import Portfolio from '../portfolio/portfolio.astro';
+import LyricTemplates from './lyricTemplates.astro';
+interface Props {lang: SupportedLanguage}
+
+const {lang} = Astro.props;
+---
+<div data-lyrics-viewer>
+    <Portfolio items={items} lang={lang} />
+    <LyricTemplates />
+    <dialog class={styles.modal} aria-label={lang === 'cs' ? 'Text písně' : 'Song lyrics'}>
+        <button
+            class={styles.close}
+            type="button"
+            data-lyrics-close
+            autofocus
+            aria-label={lang === 'cs' ? 'Zavřít' : 'Close'}
+        >×
+        </button>
+        <div class={styles.modalContent} data-lyrics-content></div>
+    </dialog>
+</div>
+<script>
+    for (const viewer of document.querySelectorAll<HTMLElement>('[data-lyrics-viewer]')) {
+        const dialog = viewer.querySelector<HTMLDialogElement>('dialog');
+        const content = viewer.querySelector<HTMLElement>('[data-lyrics-content]');
+        const close = viewer.querySelector<HTMLButtonElement>('[data-lyrics-close]');
+
+        if (!dialog || !content || !close) continue;
+
+        for (const button of viewer.querySelectorAll<HTMLButtonElement>('[data-lyrics-open]')) {
+            button.addEventListener('click', () => {
+                const template = Array.from(viewer.querySelectorAll<HTMLTemplateElement>('template[data-lyrics-text]'))
+                    .find(candidate => candidate.dataset.lyricsText === button.dataset.lyricsOpen);
+
+                if (!template) return;
+
+                content.replaceChildren(template.content.cloneNode(true));
+                dialog.showModal();
+                dialog.scrollTop = 0;
+            });
+        }
+
+        close.addEventListener('click', () => dialog.close());
+        dialog.addEventListener('pointerdown', event => {
+            if (event.target === dialog) dialog.close();
+        });
+    }
+</script>

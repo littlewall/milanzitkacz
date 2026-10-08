@@ -1,20 +1,14 @@
 {
-  "extends": "@dvdevcz/typescript-config",
+  "extends": "astro/tsconfigs/strict",
   "compilerOptions": {
-    "incremental": true,
-    "checkJs": true,
-    "plugins": [
-      {
-        "name": "typescript-plugin-css-modules"
-      }
-    ]
+    "verbatimModuleSyntax": false
   },
   "include": [
-    "./src/**/*",
-    "./gatsby-node.ts",
-    "./gatsby-config.ts",
-    "./gatsby-browser.tsx",
-    "./gatsby-ssr.tsx",
-    "./plugins/**/*",
+    ".astro/types.d.ts",
+    "**/*"
+  ],
+  "exclude": [
+    "dist",
+    "node_modules"
   ]
 }

@@ -1,0 +1,11 @@
+* {
+    --color-yellow: #fec51a;
+    --gutter: 10px;
+
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    margin: 0;
+}

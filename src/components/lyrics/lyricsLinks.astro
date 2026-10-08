@@ -1,0 +1,13 @@
+---
+import styles from '../../pages/co-delam/texty.module.css';
+interface Props {links: {id: string, title: string}[]}
+
+const {links} = Astro.props;
+---
+<ul class={styles.linkList}>
+    {links.map(link => (
+        <li class={styles.linkListItem}>
+            <button type="button" data-lyrics-open={link.id} aria-haspopup="dialog">{link.title}</button>
+        </li>
+    ))}
+</ul>

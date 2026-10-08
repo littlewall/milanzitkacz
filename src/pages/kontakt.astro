@@ -1,0 +1,46 @@
+---
+import {Picture} from 'astro:assets';
+
+import contactPortrait from '../../public/images/portrait/contact.png';
+import Footer from '../components/layout/footer/footer.astro';
+import NavBar from '../components/layout/navbar/navbar.astro';
+import SocialsIcons from '../components/layout/navbar/socialsIcons.astro';
+import Layout from '../layouts/Layout.astro';
+import {SupportedLanguage} from '../lib/translation/i18nTypes';
+import {createTranslator} from '../lib/translation/translations';
+import styles from './kontakt/index.module.css';
+
+const lang = (Astro.currentLocale || 'cs') as SupportedLanguage;
+const translate = createTranslator(lang);
+const currentPath = Astro.url.pathname;
+---
+
+<Layout title={translate('contact.meta.title')} description={translate('contact.meta.description')}>
+    <NavBar isHome={true} lang={lang} currentPath={currentPath} />
+
+    <div class={styles.page}>
+        <div class={styles.background}>
+            <Picture
+                src={contactPortrait}
+                alt="Kontakt"
+                class={styles.backgroundImage}
+                loading="eager"
+            />
+        </div>
+        <div class={styles.content}>
+            <h2>{translate('contact.content.heading')}</h2>
+            <p>
+                {translate('contact.content.paragraph')}
+            </p>
+            <a class={styles.email} href={`mailto:${translate('contact.content.email')}`}>
+                {translate('contact.content.email')}
+            </a>
+            <span class={styles.socials}>
+                <SocialsIcons />
+            </span>
+        </div>
+        <div class={styles.footer}>
+            <Footer inline={true} />
+        </div>
+    </div>
+</Layout>

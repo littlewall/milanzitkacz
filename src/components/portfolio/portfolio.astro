@@ -1,0 +1,42 @@
+---
+import LyricsLinks from '../lyrics/lyricsLinks.astro';
+import styles from './portfolio.module.css';
+import type {PortfolioProps} from './types';
+type Props = PortfolioProps;
+
+const {items, lang = 'cs'} = Astro.props;
+---
+<div class={styles.wrapper}>
+    {items.map(item => (
+        <div
+            class:list={[
+                styles.row,
+                item.isRight && styles.right,
+                item.isFullWidth && styles.fullWidth,
+                item.verticalReverse && styles.verticalReverse,
+                item.noTopMargin && styles.noTopMargin,
+            ]}
+        >
+            {item.embed && <div class={styles.embed} set:html={item.embed} />}
+            {item.image && <div class={styles.image} style={{backgroundImage: `url('${item.image}')`}} />}
+            {item.links && <div class={styles.component}><LyricsLinks links={item.links} /></div>}
+            {!item.isFullWidth && item.heading && (
+                <div class={styles.text}>
+                    <h4 class={styles.subheading}>{item.subheading?.[lang]}</h4>
+                    <h2 class={styles.heading}>{item.heading[lang]}</h2>
+                    <p class={styles.paragraph}>{item.text?.[lang]}</p>
+                    {item.button && (
+                        <a
+                            href={item.button.url}
+                            class={styles.button}
+                            target={item.button.isExternal ? '_blank' : undefined}
+                            rel={item.button.isExternal ? 'noopener noreferrer' : undefined}
+                        >
+                            {item.button.text[lang]}
+                        </a>
+                    )}
+                </div>
+            )}
+        </div>
+    ))}
+</div>

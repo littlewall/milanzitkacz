@@ -1,0 +1,43 @@
+---
+import '@fontsource/poppins/300.css';
+import '@fontsource/poppins/500.css';
+import '@fontsource/poppins/600.css';
+import '@fontsource/poppins/900.css';
+import '@fontsource/roboto/300.css';
+import '@fontsource/roboto/700.css';
+import '../styles/global.css';
+
+interface Props {
+    title: string,
+    description?: string,
+}
+
+const {title, description} = Astro.props;
+const lang = Astro.currentLocale ?? 'cs';
+const defaultPath = Astro.url.pathname.replace(/^\/en(?=\/|$)/, '') || '/';
+const canonical = new URL(Astro.url.pathname, Astro.site);
+const czechUrl = new URL(defaultPath, Astro.site);
+const englishUrl = new URL(`/en${defaultPath}`, Astro.site);
+---
+
+<!doctype html>
+<html lang={lang}>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>{title}</title>
+        {description && <meta name="description" content={description} />}
+        <link rel="canonical" href={canonical} />
+        <link rel="alternate" hreflang="cs" href={czechUrl} />
+        <link rel="alternate" hreflang="en" href={englishUrl} />
+        <link rel="alternate" hreflang="x-default" href={czechUrl} />
+        <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/apple-touch-icon.png" />
+        <link rel="manifest" href="/images/favicon/site.webmanifest" />
+        <link rel="icon" href="/images/favicon/favicon.svg" />
+        <meta name="theme-color" content="#ffffff" />
+        <slot name="head" />
+    </head>
+    <body>
+        <slot />
+    </body>
+</html>
