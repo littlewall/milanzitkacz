@@ -2,12 +2,12 @@
     flex-basis: auto;
     margin: 1rem 0;
     padding: 1.5rem;
+    border: 1px solid #eaeaea;
+    border-radius: 10px;
     color: inherit;
     text-align: left;
     text-decoration: none;
     transition: color .15s ease, border-color .15s ease;
-    border-radius: 10px;
-    border: 1px solid #eaeaea;
 
     &:hover,
     &:focus,
@@ -17,8 +17,8 @@
 
     .heading {
         margin: 0 0 1rem;
-        color: var(--color-yellow);
         font-size: 1.5rem;
+        color: var(--color-yellow);
     }
 
     .text {

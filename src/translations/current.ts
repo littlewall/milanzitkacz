@@ -4,7 +4,7 @@ const current: PageTranslations = {
     meta: {
         title: {
             cs: 'Na čem aktuálně pracuji | Milan Zítka',
-            en: "What I'm Currently Working On | Milan Zítka",
+            en: 'What I\'m Currently Working On | Milan Zítka',
         },
         description: {
             cs: 'Přehled aktuálních projektů a hudebních novinek.',

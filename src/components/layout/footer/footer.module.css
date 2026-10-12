@@ -1,12 +1,12 @@
 .footer {
+    display: flex;
     width: 100%;
     margin: 20px 0;
     padding: 10px 0 0 5vw;
-    display: flex;
-    background: #fff;
-    color: #888;
-    font-size: .8em;
     border-top: 1px solid #ededed;
+    font-size: .8em;
+    color: #888;
+    background: #fff;
 
     a {
         color: #888;
@@ -19,10 +19,10 @@
     }
 
     &.inline {
+        display: inline-flex;
         width: auto;
         padding: 0;
-        display: inline-flex;
-        background: none;
         border: none;
+        background: none;
     }
 }

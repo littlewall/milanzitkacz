@@ -4,7 +4,7 @@ const whatido: PageTranslations = {
     meta: {
         title: {
             cs: 'Co dělám a co jsem zažil | Milan Zítka',
-            en: "What I do and what I've experienced | Milan Zítka",
+            en: 'What I do and what I\'ve experienced | Milan Zítka',
         },
         description: {
             cs: 'Můj umělecký svět je plný hudby, muzikálů, textů a webů...',

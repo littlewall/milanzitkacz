@@ -24,6 +24,16 @@ const home: PageTranslations = {
             cs: 'Prožijte ho se mnou',
             en: 'Experience it',
         },
+        current: {
+            heading: {
+                cs: 'Na čem právě pracuji',
+                en: 'What I\'m working on',
+            },
+            more: {
+                cs: 'Vše aktuální',
+                en: 'All news',
+            },
+        },
     },
 };
 

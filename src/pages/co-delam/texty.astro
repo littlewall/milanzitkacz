@@ -1,0 +1,28 @@
+---
+import Footer from '../../components/layout/footer/footer.astro';
+import NavBar from '../../components/layout/navbar/navbar.astro';
+import Lyrics from '../../components/lyrics/lyrics.astro';
+import Layout from '../../layouts/Layout.astro';
+import {SupportedLanguage} from '../../lib/translation/i18nTypes';
+import {createTranslator} from '../../lib/translation/translations';
+import styles from './texty.module.css';
+
+const lang = (Astro.currentLocale || 'cs') as SupportedLanguage;
+const translate = createTranslator(lang);
+const currentPath = Astro.url.pathname;
+
+---
+
+<Layout title={translate('texts.meta.title')} description={translate('texts.meta.description')}>
+    <NavBar lang={lang} currentPath={currentPath} />
+
+    <main class={styles.page}>
+        <div class={styles.content}>
+            <h1 class={styles.heading}>{translate('texts.content.heading')}</h1>
+            <span class={styles.text}>{translate('texts.content.description')}</span>
+            <Lyrics lang={lang} />
+        </div>
+    </main>
+
+    <Footer />
+</Layout>

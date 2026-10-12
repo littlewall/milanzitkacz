@@ -1,0 +1,61 @@
+---
+import CardLink from '../../components/cardLink/cardLink.astro';
+import Footer from '../../components/layout/footer/footer.astro';
+import NavBar from '../../components/layout/navbar/navbar.astro';
+import currentProjects from '../../data/currentProjects';
+import Layout from '../../layouts/Layout.astro';
+import {SupportedLanguage} from '../../lib/translation/i18nTypes';
+import {createTranslator} from '../../lib/translation/translations';
+import styles from './index.module.css';
+
+const lang = (Astro.currentLocale || 'cs') as SupportedLanguage;
+const translate = createTranslator(lang);
+const currentPath = Astro.url.pathname;
+---
+
+<Layout title={translate('current.meta.title')} description={translate('current.meta.description')}>
+    <NavBar lang={lang} currentPath={currentPath} />
+
+    <main class={styles.page}>
+        <div class={styles.content}>
+            <div class={styles.cards}>
+                {currentProjects.map(project => (
+                    <CardLink
+                        heading={translate(`current.content.cards.${project.key}.heading`)}
+                        text={translate(`current.content.cards.${project.key}.text`)}
+                        link={project.link}
+                        lang={lang}
+                    />
+                ))}
+            </div>
+            <div class={styles.blob}>
+                <svg
+                    id="10015.io"
+                    viewBox="0 0 480 480"
+                    xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                >
+                    <defs>
+                        <clipPath id="blob">
+                            <path
+                                fill="#474bff"
+                                d="M430.5,320Q400,400,320,408Q240,416,180,388Q120,360,88.5,300Q57,240,77,168.5Q97,97,168.5,54Q240,11,311.5,54Q383,97,422,168.5Q461,240,430.5,320Z"
+                            />
+                        </clipPath>
+                    </defs>
+                    <image
+                        x="0"
+                        y="0"
+                        width="100%"
+                        height="100%"
+                        clip-path="url(#blob)"
+                        xlink:href="/images/portrait/news.png"
+                        preserveAspectRatio="xMidYMid slice"
+                    >
+                    </image>
+                </svg>
+            </div>
+        </div>
+    </main>
+    <Footer />
+</Layout>

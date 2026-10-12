@@ -1,0 +1,12 @@
+---
+import styles from './footer.module.css';
+interface Props {inline?: boolean}
+
+const {inline} = Astro.props;
+---
+<footer class:list={[styles.footer, inline && styles.inline]}>
+    &copy; {new Date().getFullYear()}&nbsp;
+    <a href="https://github.com/littlewall" target="_blank" rel="noreferrer">littlewall</a>
+    &nbsp;|&nbsp;Foto:&nbsp;
+    <a href="https://lukasjindra.cz" target="_blank" rel="noreferrer">Lukáš Jindra</a>
+</footer>

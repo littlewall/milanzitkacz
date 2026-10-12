@@ -1,0 +1,24 @@
+---
+import type {SupportedLanguage} from '../../lib/translation/i18nTypes';
+import styles from './cardLink.module.css';
+
+interface Props {
+    heading: string,
+    text: string,
+    link: string,
+    lang?: SupportedLanguage,
+    headingLevel?: 'h2' | 'h3',
+}
+
+const {
+    heading,
+    text,
+    link,
+    lang = 'cs',
+    headingLevel: Heading = 'h2',
+} = Astro.props;
+---
+<a href={lang === 'en' ? `/en${link}` : link} class={styles.card}>
+    <Heading class={styles.heading}>{heading}</Heading>
+    <p class={styles.text}>{text}</p>
+</a>
