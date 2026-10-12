@@ -3,8 +3,8 @@ import {PageTranslations} from '../lib/translation/i18nTypes';
 const aboutme: PageTranslations = {
     meta: {
         title: {
-            cs: 'Kdo jsem a můj příběh | Milan Zítka',
-            en: 'Who I am and my story | Milan Zítka',
+            cs: 'Kdo jsem a jaký je můj příběh | Milan Zítka',
+            en: 'Who I am and what my story is | Milan Zítka',
         },
         description: {
             cs: 'Můj příběh je cestou plnou jazzu, muzikálů a kreativního designu...',
