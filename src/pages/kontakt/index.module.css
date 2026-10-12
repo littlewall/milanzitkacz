@@ -4,6 +4,10 @@
     width: 100%;
     min-height: 100vh;
 
+    .portraitMask {
+        position: absolute;
+    }
+
     .background {
         position: relative;
         display: block;
@@ -16,15 +20,14 @@
 
         @media (min-width: 900px) {
             position: absolute;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            width: 50%;
+            top: -10vh;
+            right: -20vw;
+            width: 70vw;
             max-width: unset;
-            height: 100vh;
+            height: 120vh;
             max-height: unset;
             margin: 0;
-            clip-path: polygon(25% 0, 100% 0, 100% 100%, 25% 100%, 0 50%);
+            clip-path: url('#contact-portrait-clip');
         }
     }
     
@@ -35,6 +38,10 @@
         height: 100%;
         object-fit: cover;
         object-position: 50% 50%;
+
+        @media (min-width: 900px) {
+            object-position: 75% 50%;
+        }
     }
     
     .content {

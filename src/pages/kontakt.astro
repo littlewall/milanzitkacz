@@ -19,7 +19,14 @@ const currentPath = Astro.url.pathname;
     <NavBar isHome={true} lang={lang} currentPath={currentPath} />
 
     <div class={styles.page}>
-        <div class={styles.background}>
+        <svg class={styles.portraitMask} width="0" height="0" aria-hidden="true" focusable="false">
+            <defs>
+                <clipPath id="contact-portrait-clip" clipPathUnits="objectBoundingBox">
+                    <path d="M0,.5 L.17,.29 C.3,.13 .25,.02 .54,.02 C.83,.02 .99,.17 .98,.46 C.97,.75 .87,.96 .6,.98 C.31,1 .29,.88 .17,.71 Z" />
+                </clipPath>
+            </defs>
+        </svg>
+        <div class={styles.background} transition:name="portrait">
             <Picture
                 src={contactPortrait}
                 alt="Kontakt"

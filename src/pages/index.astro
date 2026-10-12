@@ -20,7 +20,7 @@ const currentPath = Astro.url.pathname;
     <NavBar isHome={true} lang={lang} currentPath={currentPath} />
 
     <div class={styles.hero}>
-        <div class={styles.background}>
+        <div class={styles.background} transition:name="portrait">
             <Picture
                 src={homePortrait}
                 alt="Milan Zítka"

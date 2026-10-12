@@ -5,8 +5,6 @@
   "type": "module",
   "dependencies": {
     "@astrojs/sitemap": "^3.7.4",
-    "@fontsource/poppins": "^5.3.0",
-    "@fontsource/roboto": "^5.3.0",
     "@lwdev/audio-player": "^0.0.8",
     "astro": "^7.3.5"
   },

@@ -71,24 +71,26 @@ const isActive = (path: string) => currentPath.replace(/\/$/, '') === p(path).re
     </div>
 </nav>
 <script>
-    for (const nav of document.querySelectorAll<HTMLElement>('[data-navbar]')) {
-        const button = nav.querySelector<HTMLButtonElement>('[data-menu-toggle]');
-        const menu = nav.querySelector<HTMLElement>('[data-menu]');
+    document.addEventListener('astro:page-load', () => {
+        for (const nav of document.querySelectorAll<HTMLElement>('[data-navbar]')) {
+            const button = nav.querySelector<HTMLButtonElement>('[data-menu-toggle]');
+            const menu = nav.querySelector<HTMLElement>('[data-menu]');
 
-        if (!button || !menu) continue;
+            if (!button || !menu) continue;
 
-        const toggle = (opened: boolean) => {
-            button.setAttribute('aria-expanded', String(opened));
-            button.classList.toggle(button.dataset.activeClass ?? '', opened);
-            menu.classList.toggle(menu.dataset.openClass ?? '', opened);
-        };
+            const toggle = (opened: boolean) => {
+                button.setAttribute('aria-expanded', String(opened));
+                button.classList.toggle(button.dataset.activeClass ?? '', opened);
+                menu.classList.toggle(menu.dataset.openClass ?? '', opened);
+            };
 
-        button.addEventListener('click', () => toggle(button.getAttribute('aria-expanded') !== 'true'));
-        nav.addEventListener('keydown', event => {
-            if (event.key === 'Escape' && button.getAttribute('aria-expanded') === 'true') {
-                toggle(false);
-                button.focus();
-            }
-        });
-    }
+            button.addEventListener('click', () => toggle(button.getAttribute('aria-expanded') !== 'true'));
+            nav.addEventListener('keydown', event => {
+                if (event.key === 'Escape' && button.getAttribute('aria-expanded') === 'true') {
+                    toggle(false);
+                    button.focus();
+                }
+            });
+        }
+    });
 </script>

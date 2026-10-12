@@ -1,11 +1,8 @@
 ---
-import '@fontsource/poppins/300.css';
-import '@fontsource/poppins/500.css';
-import '@fontsource/poppins/600.css';
-import '@fontsource/poppins/900.css';
-import '@fontsource/roboto/300.css';
-import '@fontsource/roboto/700.css';
 import '../styles/global.css';
+
+import {Font} from 'astro:assets';
+import {ClientRouter} from 'astro:transitions';
 
 interface Props {
     title: string,
@@ -25,6 +22,7 @@ const englishUrl = new URL(`/en${defaultPath}`, Astro.site);
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <Font cssVariable="--font-poppins" preload={[{weight: 300}, {weight: 500}]} />
         <title>{title}</title>
         {description && <meta name="description" content={description} />}
         <link rel="canonical" href={canonical} />
@@ -35,6 +33,7 @@ const englishUrl = new URL(`/en${defaultPath}`, Astro.site);
         <link rel="manifest" href="/images/favicon/site.webmanifest" />
         <link rel="icon" href="/images/favicon/favicon.svg" />
         <meta name="theme-color" content="#ffffff" />
+        <ClientRouter />
         <slot name="head" />
     </head>
     <body>

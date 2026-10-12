@@ -24,29 +24,31 @@ const {lang} = Astro.props;
     </dialog>
 </div>
 <script>
-    for (const viewer of document.querySelectorAll<HTMLElement>('[data-lyrics-viewer]')) {
-        const dialog = viewer.querySelector<HTMLDialogElement>('dialog');
-        const content = viewer.querySelector<HTMLElement>('[data-lyrics-content]');
-        const close = viewer.querySelector<HTMLButtonElement>('[data-lyrics-close]');
+    document.addEventListener('astro:page-load', () => {
+        for (const viewer of document.querySelectorAll<HTMLElement>('[data-lyrics-viewer]')) {
+            const dialog = viewer.querySelector<HTMLDialogElement>('dialog');
+            const content = viewer.querySelector<HTMLElement>('[data-lyrics-content]');
+            const close = viewer.querySelector<HTMLButtonElement>('[data-lyrics-close]');
 
-        if (!dialog || !content || !close) continue;
+            if (!dialog || !content || !close) continue;
 
-        for (const button of viewer.querySelectorAll<HTMLButtonElement>('[data-lyrics-open]')) {
-            button.addEventListener('click', () => {
-                const template = Array.from(viewer.querySelectorAll<HTMLTemplateElement>('template[data-lyrics-text]'))
-                    .find(candidate => candidate.dataset.lyricsText === button.dataset.lyricsOpen);
+            for (const button of viewer.querySelectorAll<HTMLButtonElement>('[data-lyrics-open]')) {
+                button.addEventListener('click', () => {
+                    const template = Array.from(viewer.querySelectorAll<HTMLTemplateElement>('template[data-lyrics-text]'))
+                        .find(candidate => candidate.dataset.lyricsText === button.dataset.lyricsOpen);
 
-                if (!template) return;
+                    if (!template) return;
 
-                content.replaceChildren(template.content.cloneNode(true));
-                dialog.showModal();
-                dialog.scrollTop = 0;
+                    content.replaceChildren(template.content.cloneNode(true));
+                    dialog.showModal();
+                    dialog.scrollTop = 0;
+                });
+            }
+
+            close.addEventListener('click', () => dialog.close());
+            dialog.addEventListener('pointerdown', event => {
+                if (event.target === dialog) dialog.close();
             });
         }
-
-        close.addEventListener('click', () => dialog.close());
-        dialog.addEventListener('pointerdown', event => {
-            if (event.target === dialog) dialog.close();
-        });
-    }
+    });
 </script>

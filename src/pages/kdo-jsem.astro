@@ -16,7 +16,7 @@ const currentPath = Astro.url.pathname;
     <NavBar lang={lang} currentPath={currentPath} />
 
     <div class={styles.page}>
-        <div class={styles.blob}>
+        <div class={styles.blob} transition:name="portrait">
             <svg
                 id="10015.io"
                 viewBox="0 0 480 480"

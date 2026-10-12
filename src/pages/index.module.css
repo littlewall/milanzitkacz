@@ -15,15 +15,16 @@
 
         @media (min-width: 900px) {
             position: absolute;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            width: 50%;
+            top: -10vh;
+            right: -20vw;
+            overflow: hidden;
+            width: 70vw;
             max-width: unset;
-            height: 100vh;
+            height: 120vh;
             max-height: unset;
             margin: 0;
-            clip-path: ellipse(70% 80% at 70% 50%);
+            border-radius: 48% 52% 43% 57% / 47% 42% 58% 53%;
+            clip-path: none;
         }
     }
 
@@ -34,6 +35,10 @@
         height: 100%;
         object-fit: cover;
         object-position: 50% 50%;
+
+        @media (min-width: 900px) {
+            object-position: 75% 50%;
+        }
     }
 
     .content {

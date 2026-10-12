@@ -3,9 +3,18 @@
     --gutter: 10px;
 
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+    font-family: var(--font-poppins);
 }
 
 body {
     margin: 0;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    ::view-transition-group(portrait),
+    ::view-transition-old(portrait),
+    ::view-transition-new(portrait) {
+        animation-duration: .45s;
+        animation-timing-function: cubic-bezier(.4, 0, .2, 1);
+    }
 }
